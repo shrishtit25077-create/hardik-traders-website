@@ -70,7 +70,7 @@ const Card = ({ cat, featured }) => (
 
 export default function Products() {
   return (
-    <section id="products" className="py-20" style={{ backgroundColor: 'var(--bg)' }}>
+    <section id="products" className="py-16" style={{ backgroundColor: 'var(--bg)' }}>
       <div className="container mx-auto px-6 lg:px-12">
 
         <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-5">

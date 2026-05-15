@@ -1,15 +1,16 @@
 import React from 'react';
-import Navbar       from './components/Navbar';
-import Hero         from './components/Hero';
-import About        from './components/About';
-import Products     from './components/Products';
-import Brands       from './components/Brands';
-import Stats        from './components/Stats';
-import WhyChooseUs  from './components/WhyChooseUs';
-import Testimonials from './components/Testimonials';
-import Contact      from './components/Contact';
-import Footer       from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
+import Navbar        from './components/Navbar';
+import Hero          from './components/Hero';
+import Stats         from './components/Stats';
+import About         from './components/About';
+import Products      from './components/Products';
+import TrustSection  from './components/TrustSection';
+import Industries    from './components/Industries';
+import Brands        from './components/Brands';
+import Testimonials  from './components/Testimonials';
+import Contact       from './components/Contact';
+import Footer        from './components/Footer';
+import QuickContact  from './components/QuickContact';
 
 function App() {
   return (
@@ -20,13 +21,14 @@ function App() {
         <Stats />
         <About />
         <Products />
-        <WhyChooseUs />
+        <TrustSection />
+        <Industries />
         <Brands />
         <Testimonials />
         <Contact />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <QuickContact />
     </div>
   );
 }

@@ -21,14 +21,6 @@ const scrollTo = (href, e) => {
   if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 78, behavior: 'smooth' });
 };
 
-/* SVG fallback for Ingco only */
-const IngcoSVG = () => (
-  <svg viewBox="0 0 180 50" width="130" height="38" xmlns="http://www.w3.org/2000/svg">
-    <text x="4" y="34" fontFamily="Arial Black,sans-serif" fontSize="28" fontWeight="900" fill="#F47920">
-      <tspan fontStyle="italic">i</tspan>NGCO
-    </text>
-  </svg>
-);
 
 const BRANDS = [
   { name: 'Bosch',    type: 'img', src: boschImg },
@@ -38,7 +30,6 @@ const BRANDS = [
   { name: 'Hilti',    type: 'img', src: hiltiImg },
   { name: 'Taparia',  type: 'img', src: tapariaImg },
   { name: 'Total',    type: 'img', src: totalImg },
-  { name: 'Ingco',    type: 'svg' },
   { name: 'Mitutoyo', type: 'img', src: mitutoyoImg },
   { name: 'Pidilite', type: 'img', src: pidiliteImg },
   { name: 'Unbrako',  type: 'img', src: unbrakoImg },

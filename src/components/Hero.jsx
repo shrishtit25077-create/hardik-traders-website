@@ -45,7 +45,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative overflow-hidden" style={{ backgroundColor: 'var(--bg)', paddingTop: '96px', paddingBottom: '72px' }}>
+    <section id="home" className="relative overflow-hidden" style={{ backgroundColor: 'var(--bg)', paddingTop: 'var(--header-h)', paddingBottom: '56px' }}>
       {/* Subtle grid */}
       <div className="absolute inset-0 grid-pattern pointer-events-none" />
       {/* Radial red glow — top right */}

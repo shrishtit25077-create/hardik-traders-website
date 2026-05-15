@@ -7,20 +7,24 @@
 
 /* ─── Design Tokens ─── */
 :root {
-  --red:       #D7263D;
-  --red-hover: #C41F34;
-  --red-tint:  #FCEBED;
-  --red-tint2: rgba(215,38,61,0.09);
+  --red:       #C8102E;
+  --red-hover: #A30D24;
+  --red-tint:  #fdf0f2;
+  --red-tint2: rgba(200,16,46,0.07);
 
-  --bg:        #F5F0E8;   /* warm beige body */
-  --surface:   #EDE8DC;   /* alternate section */
+  --bg:        #F7F4EF;   /* warm off-white */
+  --surface:   #EFECE7;   /* alternate section */
   --card:      #FFFFFF;
-  --border:    #DDD8CE;
-  --border-lt: #E8E3D8;
+  --border:    #E8E2D9;
+  --border-lt: #F0ECE5;
 
-  --text:      #1C1A18;
-  --sub:       #524E48;
-  --muted:     #8A857C;
+  --text:      #111111;
+  --sub:       #3a3a3a;
+  --muted:     #5F5F5F;
+
+  --topbar-h:  0px;   /* TopBar removed */
+  --nav-h:     60px;
+  --header-h:  60px;  /* nav only */
 }
 
 @layer base {
@@ -133,3 +137,52 @@
   0%   { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
+
+/* ─── Mobile responsiveness utilities ─── */
+
+/* Prevent horizontal scroll globally */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Safe area for bottom action bar (iPhone notch) */
+.mobile-bar-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Reduce motion on mobile for performance */
+@media (max-width: 768px) {
+  :root {
+    --topbar-h: 0px;
+    --nav-h:    60px;
+    --header-h: 60px; /* no topbar on mobile */
+  }
+  .card-lift:hover { transform: none; }
+  section[id] { scroll-margin-top: 60px; }
+}
+
+/* Improve touch target sizes on mobile */
+@media (max-width: 768px) {
+  button, a { min-height: 40px; }
+  .btn-primary, .btn-ghost { padding: 12px 20px; font-size: 14px; }
+}
+
+/* Stats section mobile divider */
+@media (max-width: 767px) {
+  .stats-item-border {
+    border-right: 1px solid rgba(255,255,255,0.12) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+  }
+  .stats-item-border:nth-child(even) { border-right: none !important; }
+  .stats-item-border:nth-last-child(-n+2) { border-bottom: none !important; }
+}
+
+/* Fluid image scaling */
+img { max-width: 100%; height: auto; }
+
+/* Glass nav background for mobile (no blur support on some android) */
+@media (max-width: 768px) {
+  .glass {
+    background: rgba(247, 244, 239, 0.98) !important;
+    backdrop-filter: none;
+  }
+}
+

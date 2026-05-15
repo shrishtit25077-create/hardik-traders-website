@@ -16,9 +16,9 @@ const FEATURES = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20" style={{ backgroundColor: 'var(--surface)' }}>
+    <section id="about" className="py-16" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Image */}
           <motion.div

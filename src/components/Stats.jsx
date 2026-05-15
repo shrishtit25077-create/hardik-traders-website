@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
 import { Package, ShieldCheck, Users, Clock } from 'lucide-react';
 
 const useCounter = (end, active = false) => {
@@ -19,57 +18,63 @@ const useCounter = (end, active = false) => {
 };
 
 const STATS = [
-  { end: 50000, suffix: '+', label: 'Products Supplied',  Icon: Package },
-  { end: 25,    suffix: '+', label: 'Premium Brands',     Icon: ShieldCheck },
-  { end: 1500,  suffix: '+', label: 'Industrial Clients', Icon: Users },
-  { end: 10,    suffix: '+', label: 'Years of Service',   Icon: Clock },
+  { end: 25,   suffix: '+', label: 'Premium Brands',     Icon: ShieldCheck },
+  { end: 15,   suffix: '+', label: 'Product Categories', Icon: Package },
+  { end: 10,   suffix: '+', label: 'Years Experience',   Icon: Clock },
+  { end: 1500, suffix: '+', label: 'Industrial Clients', Icon: Users },
 ];
 
-const Item = ({ s, active, i, isLast }) => {
+function StatItem({ s, active, i }) {
   const v = useCounter(s.end, active);
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: i * 0.08 }}
-      className="flex-1 flex flex-col items-center text-center py-8 px-6"
-      style={{ borderRight: isLast ? 'none' : '1px solid var(--border)' }}
-    >
-      {/* Icon circle */}
+    <div className="flex flex-col items-center text-center py-8 px-4">
       <div
-        className="w-12 h-12 rounded-full flex items-center justify-center mb-4"
-        style={{ backgroundColor: 'var(--red-tint)', color: 'var(--red)' }}
+        className="w-11 h-11 rounded-full flex items-center justify-center mb-3"
+        style={{ backgroundColor: 'rgba(255,255,255,0.12)' }}
       >
-        <s.Icon size={22} strokeWidth={1.8} />
+        <s.Icon size={20} color="white" strokeWidth={1.6} />
       </div>
-      {/* Number */}
-      <div className="text-[2.2rem] font-black leading-none mb-1.5" style={{ color: 'var(--text)' }}>
+      <div className="text-[2rem] md:text-[2.4rem] font-black leading-none mb-1 text-white">
         {v.toLocaleString()}{s.suffix}
       </div>
-      {/* Label */}
-      <div className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: 'var(--muted)' }}>
+      <div className="text-[10px] font-semibold uppercase tracking-widest text-white/70">
         {s.label}
       </div>
-    </motion.div>
+    </div>
   );
-};
+}
 
 export default function Stats() {
   const ref = useRef(null);
   const [go, setGo] = useState(false);
+
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setGo(true); obs.disconnect(); } }, { threshold: 0.3 });
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setGo(true); obs.disconnect(); } },
+      { threshold: 0.2 }
+    );
     if (ref.current) obs.observe(ref.current);
     return () => obs.disconnect();
   }, []);
 
   return (
-    <section ref={ref} style={{ backgroundColor: 'var(--card)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-wrap divide-x divide-[var(--border)] md:flex-nowrap">
+    <section
+      ref={ref}
+      style={{ backgroundColor: 'var(--red)', position: 'relative', overflow: 'hidden' }}
+    >
+      {/* Subtle dot grid overlay */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute', inset: 0, pointerEvents: 'none',
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }}
+      />
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 relative">
+        <div className="grid grid-cols-2 md:grid-cols-4 divide-x-0 md:divide-x divide-white/15">
           {STATS.map((s, i) => (
-            <Item key={i} s={s} active={go} i={i} isLast={i === STATS.length - 1} />
+            <StatItem key={i} s={s} active={go} i={i} />
           ))}
         </div>
       </div>

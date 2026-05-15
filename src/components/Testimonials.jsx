@@ -49,7 +49,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20" style={{ backgroundColor: 'var(--bg)' }}>
+    <section className="py-16" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="container mx-auto px-6 lg:px-12">
 
         {/* Header */}

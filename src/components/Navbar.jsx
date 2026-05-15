@@ -40,7 +40,12 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass' : ''}`}
-      style={{ padding: scrolled ? '9px 0' : '13px 0', backgroundColor: scrolled ? undefined : 'var(--bg)', borderBottom: scrolled ? undefined : '1px solid var(--border)' }}
+      style={{
+        top:             0,
+        padding:         scrolled ? '9px 0' : '11px 0',
+        backgroundColor: scrolled ? undefined : 'var(--bg)',
+        borderBottom:    scrolled ? undefined : '1px solid var(--border)',
+      }}
     >
       <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
         <a href="#home" onClick={e => scrollTo('#home', e)} className="flex items-center gap-2.5">
