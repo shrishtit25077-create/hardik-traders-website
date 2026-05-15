@@ -1,19 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 /* ─── Design Tokens ─── */
 :root {
-  --red:       #CC1122;
-  --red-hover: #A8001A;
-  --red-tint:  #FAEAEC;
-  --red-tint2: rgba(204,17,34,0.09);
+  --red:       #D7263D;
+  --red-hover: #C41F34;
+  --red-tint:  #FCEBED;
+  --red-tint2: rgba(215,38,61,0.09);
 
   --bg:        #F5F0E8;   /* warm beige body */
-  --surface:   #EDE8DC;   /* alternate section beige */
-  --card:      #FFFFFF;   /* white cards */
+  --surface:   #EDE8DC;   /* alternate section */
+  --card:      #FFFFFF;
   --border:    #DDD8CE;
   --border-lt: #E8E3D8;
 
