@@ -18,7 +18,7 @@ const SOCIALS = [{ Icon: Instagram, href: '#' }, { Icon: Linkedin, href: '#' }, 
 const TRUST = [
   { Icon: BadgeCheck, label: 'Authorized Dealer Since 2014' },
   { Icon: Shield,     label: 'ISO 9001:2015 Compliant' },
-  { Icon: FileText,   label: 'GST Registered: 24XXXXX0000X1ZY' },
+  { Icon: FileText,   label: 'GST: 06CYFPS9701M1ZU' },
 ];
 
 export default function Footer() {
@@ -109,8 +109,8 @@ export default function Footer() {
             <h4 className="text-white text-[11px] font-black uppercase tracking-widest mb-5">Contact Info</h4>
             <ul className="space-y-4 text-[13px]">
               {[
-                { Icon: MapPin, text: 'Industrial Area, Sector 12\nAhmedabad, Gujarat – 382 425' },
-                { Icon: Phone,  text: '+91 98765 43210\n+91 79 2345 6789' },
+                { Icon: MapPin, text: 'SH.NO.1740/4, Near SBI Bank\nCircular Road, Rewari, Haryana – 123401' },
+                { Icon: Phone,  text: '+91 94162 15742\n+91 89506 46800' },
                 { Icon: Mail,   text: 'sales@hardiktraders.com\ninfo@hardiktraders.com' },
               ].map(({ Icon, text }) => (
                 <li key={text} className="flex items-start gap-3">
@@ -135,7 +135,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-[12px]"
           style={{ borderTop: '1px solid #202020' }}>
-          <p>&copy; {new Date().getFullYear()} Hardik Traders. All rights reserved. | Industrial Tools Authorized Dealer, Gujarat</p>
+          <p>&copy; {new Date().getFullYear()} Hardik Traders. All rights reserved. | Industrial Tools Authorized Dealer, Rewari, Haryana</p>
           <div className="flex gap-5" style={{ color: '#555' }}>
             <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
             <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>

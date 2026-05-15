@@ -22,9 +22,9 @@
   --sub:       #3a3a3a;
   --muted:     #5F5F5F;
 
-  --topbar-h:  0px;   /* TopBar removed */
-  --nav-h:     60px;
-  --header-h:  60px;  /* nav only */
+  --topbar-h:  0px;
+  --nav-h:     64px;
+  --header-h:  80px;  /* nav + comfortable breathing room */
 }
 
 @layer base {
@@ -38,7 +38,7 @@
     overflow-x: hidden;
   }
   ::selection { background: var(--red-tint); color: var(--text); }
-  section[id]  { scroll-margin-top: 78px; }
+  section[id]  { scroll-margin-top: 80px; }
 }
 
 /* ─── Scrollbar ─── */
@@ -153,10 +153,10 @@ html, body { max-width: 100%; overflow-x: hidden; }
   :root {
     --topbar-h: 0px;
     --nav-h:    60px;
-    --header-h: 60px; /* no topbar on mobile */
+    --header-h: 72px; /* no topbar on mobile */
   }
   .card-lift:hover { transform: none; }
-  section[id] { scroll-margin-top: 60px; }
+  section[id] { scroll-margin-top: 72px; }
 }
 
 /* Improve touch target sizes on mobile */

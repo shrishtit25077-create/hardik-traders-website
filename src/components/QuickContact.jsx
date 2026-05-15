@@ -8,8 +8,8 @@ const scrollTo = (href, e) => {
 };
 
 const ACTIONS = [
-  { icon: <MessageCircle size={17} strokeWidth={1.8} />, label: 'WhatsApp', bg: '#25D366', href: 'https://wa.me/919876543210', external: true },
-  { icon: <Phone       size={17} strokeWidth={1.8} />, label: 'Call',      bg: '#1A5F9E', href: 'tel:+919876543210',            external: true },
+  { icon: <MessageCircle size={17} strokeWidth={1.8} />, label: 'WhatsApp', bg: '#25D366', href: 'https://wa.me/919416215742', external: true },
+  { icon: <Phone       size={17} strokeWidth={1.8} />, label: 'Call',      bg: '#1A5F9E', href: 'tel:+919416215742',            external: true },
   { icon: <Mail        size={17} strokeWidth={1.8} />, label: 'Email',     bg: 'var(--red)', href: 'mailto:sales@hardiktraders.com', external: true },
   { icon: <FileDown    size={17} strokeWidth={1.8} />, label: 'Catalog',   bg: '#2d2d2d', href: '#contact',                      external: false },
 ];
