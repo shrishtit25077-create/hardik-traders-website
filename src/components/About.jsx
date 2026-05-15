@@ -2,94 +2,86 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, ShieldCheck, Clock, ArrowRight } from 'lucide-react';
 
-const About = () => {
-  const features = [
-    { icon: <Award size={20} style={{ color: '#C1121F' }} />, title: "Premium Quality", desc: "Only stocking top-tier industrial brands and certified equipment" },
-    { icon: <ShieldCheck size={20} style={{ color: '#C1121F' }} />, title: "Authorized Dealer", desc: "Official partners for all major manufacturers" },
-    { icon: <Clock size={20} style={{ color: '#C1121F' }} />, title: "Reliable Service", desc: "Timely delivery and dedicated expert support" },
-  ];
+const scrollTo = (href, e) => {
+  if (e) e.preventDefault();
+  const el = document.getElementById(href.replace('#', ''));
+  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 78, behavior: 'smooth' });
+};
 
+const FEATURES = [
+  { Icon: Award,       title: 'Premium Quality',   desc: 'Top-tier globally-certified industrial products only.' },
+  { Icon: ShieldCheck, title: 'Authorized Dealer', desc: 'Official manufacturer partnerships and full warranties.' },
+  { Icon: Clock,       title: 'Reliable Service',  desc: 'Timely delivery and dedicated technical support.' },
+];
+
+export default function About() {
   return (
-    <section id="about" className="py-24" style={{ backgroundColor: '#F5F5F5', scrollMarginTop: '80px' }}>
+    <section id="about" className="py-20" style={{ backgroundColor: 'var(--surface)' }}>
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-14 items-center">
 
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55 }}
             className="relative"
           >
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden relative shadow-xl">
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl relative">
               <img
-                src="https://images.unsplash.com/photo-1565439390234-fcac351a02d4?auto=format&fit=crop&q=80&w=1200"
-                alt="Industrial Facility and Equipment"
+                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=85&w=1400"
+                alt="Industrial Workshop"
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Experience Badge */}
-            <div
-              className="absolute -bottom-6 -right-6 text-white p-6 rounded-2xl shadow-xl hidden md:block"
-              style={{ backgroundColor: '#C1121F' }}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 }}
+              className="absolute -bottom-5 -right-5 hidden md:block text-white p-5 rounded-2xl"
+              style={{ backgroundColor: 'var(--red)', boxShadow: '0 8px 28px rgba(225,6,44,0.32)' }}
             >
-              <div className="text-4xl font-bold mb-1">10+</div>
-              <div className="text-xs font-semibold uppercase tracking-wider opacity-90">Years of<br />Excellence</div>
-            </div>
+              <div className="text-4xl font-black mb-0.5">10+</div>
+              <div className="text-[11px] font-bold uppercase tracking-widest opacity-90">Years of<br />Excellence</div>
+            </motion.div>
           </motion.div>
 
           {/* Text */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55 }}
           >
-            <div className="flex items-center gap-3 mb-5">
-              <div className="h-[2px] w-8" style={{ backgroundColor: '#C1121F' }} />
-              <span className="font-semibold tracking-wider uppercase text-sm" style={{ color: '#C1121F' }}>About Hardik Traders</span>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-[2px] w-8" style={{ backgroundColor: 'var(--red)' }} />
+              <span className="text-[11px] font-bold tracking-[0.16em] uppercase" style={{ color: 'var(--red)' }}>About Hardik Traders</span>
             </div>
-
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight" style={{ color: '#111111' }}>
+            <h2 className="text-3xl md:text-[2.2rem] font-black mb-5 leading-tight text-[#111]">
               Your Reliable Partner in Industrial Development
             </h2>
-
-            <p className="mb-5 leading-relaxed text-lg" style={{ color: '#4B5563' }}>
-              Hardik Traders is a trusted engineering and industrial tools trading company dedicated to providing high-quality industrial products and reliable engineering solutions. We bridge the gap between world-class manufacturers and industrial sectors.
+            <p className="text-[1.05rem] leading-relaxed mb-4 text-[#555]">
+              Hardik Traders is a trusted engineering and industrial tools trading company providing high-quality products and reliable solutions across multiple sectors.
+            </p>
+            <p className="leading-relaxed mb-9 text-[#666]">
+              With an extensive inventory and strong global partnerships, we ensure clients receive the exact tools they need — enhancing productivity and maintaining the highest safety standards.
             </p>
 
-            <p className="mb-10 leading-relaxed" style={{ color: '#4B5563' }}>
-              With our extensive inventory and strong partnerships with global brands, we ensure our clients receive the best tools for their specific requirements, enhancing productivity and maintaining high safety standards.
-            </p>
-
-            <div className="grid sm:grid-cols-3 gap-4 mb-10">
-              {features.map((item, index) => (
+            <div className="grid sm:grid-cols-3 gap-3 mb-9">
+              {FEATURES.map(({ Icon, title, desc }, i) => (
                 <div
-                  key={index}
-                  className="flex flex-col gap-3 p-4 rounded-xl"
-                  style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E7EB', boxShadow: '0 2px 12px rgba(0,0,0,0.05)' }}
+                  key={i}
+                  className="p-4 rounded-xl bg-white card-lift border border-[#E8E8E8]"
+                  style={{ '--hover-border': 'var(--red)' }}
+                  onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--red)'}
+                  onMouseLeave={e => e.currentTarget.style.borderColor = '#E8E8E8'}
                 >
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(193,18,31,0.08)' }}>
-                    {item.icon}
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+                    style={{ backgroundColor: 'var(--red-tint)' }}>
+                    <Icon size={18} style={{ color: 'var(--red)' }} />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-sm mb-1" style={{ color: '#111111' }}>{item.title}</h4>
-                    <p className="text-xs leading-relaxed" style={{ color: '#9CA3AF' }}>{item.desc}</p>
-                  </div>
+                  <h4 className="text-[13px] font-bold mb-1 text-[#111]">{title}</h4>
+                  <p className="text-[12px] leading-relaxed text-[#999]">{desc}</p>
                 </div>
               ))}
             </div>
 
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 font-semibold px-8 py-3.5 rounded text-white transition-all group"
-              style={{ backgroundColor: '#C1121F' }}
-              onMouseEnter={e => e.currentTarget.style.backgroundColor = '#A30F1A'}
-              onMouseLeave={e => e.currentTarget.style.backgroundColor = '#C1121F'}
-            >
-              Get In Touch
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <a href="#contact" onClick={e => scrollTo('#contact', e)}
+              className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 text-[0.95rem] group">
+              Get In Touch <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
 
@@ -97,6 +89,4 @@ const About = () => {
       </div>
     </section>
   );
-};
-
-export default About;
+}

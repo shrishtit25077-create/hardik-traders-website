@@ -1,183 +1,177 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Shield, Award, Zap } from 'lucide-react';
+import { ArrowRight, ChevronDown, Shield, CheckCircle2 } from 'lucide-react';
 
-const Hero = () => {
+const scrollTo = (href, e) => {
+  if (e) e.preventDefault();
+  const el = document.getElementById(href.replace('#', ''));
+  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 78, behavior: 'smooth' });
+};
+
+const useCounter = (end, duration = 1800, active = false) => {
+  const [val, setVal] = useState(0);
+  useEffect(() => {
+    if (!active) return;
+    let s;
+    const raf = ts => {
+      if (!s) s = ts;
+      const p = Math.min((ts - s) / duration, 1);
+      setVal(Math.floor((1 - Math.pow(1 - p, 3)) * end));
+      if (p < 1) requestAnimationFrame(raf);
+    };
+    requestAnimationFrame(raf);
+  }, [active, end, duration]);
+  return val;
+};
+
+const Stat = ({ end, suffix, label, active }) => {
+  const v = useCounter(end, 1800, active);
   return (
-    <section id="home" className="relative pt-28 pb-20 lg:pt-36 lg:pb-28" style={{ backgroundColor: '#FFFFFF' }}>
-      {/* Subtle top red line */}
-      <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: '#C1121F' }} />
+    <div className="text-center">
+      <div className="text-2xl lg:text-3xl font-black text-[#111]">{v.toLocaleString()}{suffix}</div>
+      <div className="text-[11px] uppercase tracking-widest mt-1 font-semibold text-[#999]">{label}</div>
+    </div>
+  );
+};
 
-      <div className="container mx-auto px-6 lg:px-12">
+export default function Hero() {
+  const statsRef = useRef(null);
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStarted(true); obs.disconnect(); } }, { threshold: 0.25 });
+    if (statsRef.current) obs.observe(statsRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <section id="home" className="relative overflow-hidden" style={{ backgroundColor: 'var(--bg)', paddingTop: '96px', paddingBottom: '72px' }}>
+      {/* Subtle grid */}
+      <div className="absolute inset-0 grid-pattern pointer-events-none" />
+      {/* Radial red glow — top right */}
+      <div className="absolute -top-40 -right-40 w-[480px] h-[480px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(215,38,61,0.05) 0%, transparent 65%)' }} />
+
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
-          {/* Left: Text */}
-          <div className="w-full lg:w-1/2">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="flex items-center gap-3 mb-6"
-            >
-              <div className="h-[2px] w-10" style={{ backgroundColor: '#C1121F' }} />
-              <span className="font-semibold tracking-widest uppercase text-xs" style={{ color: '#C1121F' }}>
+          {/* Text */}
+          <div className="w-full lg:w-[52%]">
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}
+              className="flex items-center gap-3 mb-5">
+              <div className="h-[2px] w-9" style={{ backgroundColor: 'var(--red)' }} />
+              <span className="text-[11px] font-bold tracking-[0.18em] uppercase" style={{ color: 'var(--red)' }}>
                 Industrial Excellence Since 2014
               </span>
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.1 }}
-              className="font-bold leading-tight mb-6"
-              style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', color: '#111111', lineHeight: 1.15 }}
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, delay: 0.08 }}
+              className="font-black leading-[1.1] mb-5 text-[#111]"
+              style={{ fontSize: 'clamp(2rem, 4.2vw, 3.25rem)' }}
             >
-              Trusted Name in<br />
-              <span style={{ color: '#C1121F' }}>Engineering &amp; Industrial Tools</span>
+              Trusted Partner for<br />
+              <span style={{ color: 'var(--red)' }}>Engineering &amp; Industrial Tools</span>
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.2 }}
-              className="text-lg leading-relaxed mb-10 max-w-lg"
-              style={{ color: '#4B5563' }}
+              initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.16 }}
+              className="text-[1.05rem] leading-relaxed mb-7 max-w-md text-[#555]"
             >
-              High-quality industrial products and reliable engineering solutions for industries across multiple sectors — backed by 25+ premium global brands.
+              Authorized dealer for 25+ premium global brands — supplying quality tools, equipment, and engineering solutions across India.
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 mb-12"
-            >
-              <a
-                href="#products"
-                className="flex items-center justify-center gap-2 font-semibold px-8 py-3.5 rounded text-white transition-all group"
-                style={{ backgroundColor: '#C1121F' }}
-                onMouseEnter={e => e.currentTarget.style.backgroundColor = '#A30F1A'}
-                onMouseLeave={e => e.currentTarget.style.backgroundColor = '#C1121F'}
-              >
-                Explore Products
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            {/* Trust pills */}
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.24 }} className="flex flex-wrap gap-2.5 mb-8">
+              {['100% Genuine', 'Authorized Dealer', 'Pan-India Delivery'].map(t => (
+                <span key={t} className="flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 rounded-full"
+                  style={{ backgroundColor: 'var(--red-tint)', color: 'var(--red)', border: '1px solid rgba(225,6,44,0.15)' }}>
+                  <CheckCircle2 size={12} /> {t}
+                </span>
+              ))}
+            </motion.div>
+
+            {/* CTAs */}
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-3 mb-12">
+              <a href="#products" onClick={e => scrollTo('#products', e)} className="btn-primary flex items-center justify-center gap-2 px-7 py-3.5 text-[0.95rem] group">
+                Explore Products <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
               </a>
-              <a
-                href="#contact"
-                className="flex items-center justify-center font-semibold px-8 py-3.5 rounded transition-all"
-                style={{ color: '#C1121F', border: '2px solid #C1121F', backgroundColor: 'transparent' }}
-                onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#C1121F'; e.currentTarget.style.color = '#fff'; }}
-                onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#C1121F'; }}
-              >
+              <a href="#contact" onClick={e => scrollTo('#contact', e)} className="btn-ghost flex items-center justify-center px-7 py-3.5 text-[0.95rem]">
                 Request a Quote
               </a>
             </motion.div>
 
-            {/* Trust badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex items-center gap-8 pt-8"
-              style={{ borderTop: '1px solid #E5E7EB' }}
-            >
-              {[
-                { val: '25+', label: 'Premium Brands' },
-                { val: '15+', label: 'Product Categories' },
-                { val: '10+', label: 'Years of Service' },
-                { val: '1500+', label: 'Industrial Clients' },
-              ].map(({ val, label }) => (
-                <div key={label} className="text-center">
-                  <div className="text-2xl font-bold" style={{ color: '#111111' }}>{val}</div>
-                  <div className="text-xs uppercase tracking-wide mt-0.5" style={{ color: '#9CA3AF' }}>{label}</div>
-                </div>
-              ))}
-            </motion.div>
+            {/* Stats */}
+            <div ref={statsRef} className="grid grid-cols-4 gap-4 pt-7 border-t border-[#EDEDED]">
+              <Stat end={25}   suffix="+" label="Brands"     active={started} />
+              <Stat end={15}   suffix="+" label="Categories" active={started} />
+              <Stat end={10}   suffix="+" label="Years"      active={started} />
+              <Stat end={1500} suffix="+" label="Clients"    active={started} />
+            </div>
           </div>
 
-          {/* Right: Image */}
-          <div className="w-full lg:w-1/2 relative h-[320px] sm:h-[400px] lg:h-[480px]">
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 36 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.65, delay: 0.25 }}
+            className="w-full lg:w-[48%] relative"
+            style={{ height: '440px' }}
+          >
+            {/* Decorative frame */}
+            <div className="absolute inset-0 rounded-2xl pointer-events-none"
+              style={{ border: '1.5px solid rgba(225,6,44,0.18)', transform: 'translate(10px,10px)' }} />
+
+            {/* Floating image */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.65, delay: 0.3 }}
-              className="relative w-full h-full"
+              animate={{ y: [0, -7, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="absolute inset-0 rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.13)]"
             >
-              {/* Red decorative frame */}
-              <div
-                className="absolute rounded-xl"
-                style={{
-                  inset: 0,
-                  border: '2px solid #C1121F',
-                  opacity: 0.25,
-                  transform: 'translate(10px, 10px)',
-                }}
+              <img
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=85&w=1400"
+                alt="Industrial Engineering" className="w-full h-full object-cover"
+                style={{ filter: 'brightness(0.9) contrast(1.04)' }}
               />
-
-              {/* Image */}
-              <div className="absolute inset-0 rounded-xl overflow-hidden shadow-2xl" style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.15)' }}>
-                <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200"
-                  alt="Industrial Engineering Facility"
-                  className="w-full h-full object-cover"
-                  style={{ filter: 'brightness(0.92) contrast(1.05)' }}
-                />
-                <div
-                  className="absolute inset-0"
-                  style={{ background: 'linear-gradient(to top, rgba(17,17,17,0.35) 0%, transparent 60%)' }}
-                />
-              </div>
-
-              {/* Floating badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="absolute -bottom-4 -left-4 hidden md:flex items-center gap-3 rounded-xl p-4"
-                style={{ backgroundColor: '#FFFFFF', boxShadow: '0 8px 32px rgba(0,0,0,0.12)', border: '1px solid #E5E7EB' }}
-              >
-                <div className="w-10 h-10 rounded flex items-center justify-center" style={{ backgroundColor: 'rgba(193,18,31,0.1)' }}>
-                  <span style={{ color: '#C1121F', fontWeight: 800, fontSize: '14px' }}>#1</span>
-                </div>
-                <div>
-                  <div className="font-bold text-xs uppercase tracking-wide" style={{ color: '#111111' }}>Industry Leader</div>
-                  <div className="text-xs" style={{ color: '#9CA3AF' }}>Certified Quality Tools</div>
-                </div>
-              </motion.div>
-
-              {/* Top right badge */}
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1 }}
-                className="absolute -top-4 -right-4 hidden md:flex items-center gap-2 rounded-xl px-4 py-3"
-                style={{ backgroundColor: '#C1121F', boxShadow: '0 8px 24px rgba(193,18,31,0.3)' }}
-              >
-                <Shield size={16} className="text-white" />
-                <span className="text-white text-xs font-bold uppercase tracking-wide">Authorized Dealer</span>
-              </motion.div>
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(17,17,17,0.38) 0%, transparent 55%)' }} />
             </motion.div>
-          </div>
+
+            {/* Badge — bottom left */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
+              className="absolute -bottom-5 -left-5 hidden md:flex items-center gap-3 rounded-xl p-4 bg-white shadow-lg border border-[#EDEDED]"
+            >
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--red-tint2)' }}>
+                <span className="text-[13px] font-black" style={{ color: 'var(--red)' }}>#1</span>
+              </div>
+              <div>
+                <div className="text-[12px] font-bold text-[#111]">Industry Leader</div>
+                <div className="text-[11px] text-[#999]">Certified Quality Tools</div>
+              </div>
+            </motion.div>
+
+            {/* Badge — top right */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1 }}
+              className="absolute -top-4 -right-4 hidden md:flex items-center gap-2 rounded-xl px-4 py-2.5"
+              style={{ backgroundColor: 'var(--red)', boxShadow: '0 6px 24px rgba(225,6,44,0.32)' }}
+            >
+              <Shield size={14} className="text-white" />
+              <span className="text-white text-[11px] font-bold tracking-wide">Authorized Dealer</span>
+            </motion.div>
+          </motion.div>
 
         </div>
       </div>
 
-      {/* Scroll hint */}
       <motion.a
-        href="#about"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1"
-        style={{ color: '#9CA3AF' }}
+        href="#about" onClick={e => scrollTo('#about', e)}
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-1 text-[#BBB]"
       >
-        <span className="text-xs uppercase tracking-widest">Scroll</span>
-        <motion.div animate={{ y: [0, 5, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>
-          <ChevronDown size={16} />
+        <span className="text-[10px] uppercase tracking-widest">Scroll</span>
+        <motion.div animate={{ y: [0, 4, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>
+          <ChevronDown size={15} />
         </motion.div>
       </motion.a>
     </section>
   );
-};
-
-export default Hero;
+}

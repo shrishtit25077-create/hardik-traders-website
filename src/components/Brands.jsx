@@ -1,163 +1,127 @@
 import React from 'react';
 
-/* 
-  Real logos sourced from Clearbit Logo API (well-known brands)
-  and Wikipedia SVG for others. Fallback to styled text badge.
+/*
+  Horizontal infinite-scroll brand marquee — matching the screenshot style.
+  Real logos via Clearbit (colored, not grayscale) with a clean white pill card.
+  On hover the whole marquee pauses.
 */
-const brands = [
-  {
-    name: 'DEWALT',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/DeWalt_Logo.svg/320px-DeWalt_Logo.svg.png',
-    url: '#',
-  },
-  {
-    name: 'BOSCH',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bosch-logo.svg/320px-Bosch-logo.svg.png',
-    url: '#',
-  },
-  {
-    name: 'MAKITA',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Makita_logo.svg/320px-Makita_logo.svg.png',
-    url: '#',
-  },
-  {
-    name: 'STANLEY',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Stanley_Logo.svg/320px-Stanley_Logo.svg.png',
-    url: '#',
-  },
-  {
-    name: 'HILTI',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Hilti_logo.svg/320px-Hilti_logo.svg.png',
-    url: '#',
-  },
-  {
-    name: 'MITUTOYO',
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Mitutoyo_logo.svg/320px-Mitutoyo_logo.svg.png',
-    url: '#',
-  },
-  { name: 'TAPARIA', logo: null, url: '#' },
-  { name: 'GROZ', logo: null, url: '#' },
-  { name: 'INSIZE', logo: null, url: '#' },
-  { name: 'TOPTUL', logo: null, url: '#' },
-  { name: 'GREAT YUWA', logo: null, url: '#' },
-  { name: 'UNBRAKO', logo: null, url: '#' },
-  { name: 'TOKU', logo: null, url: '#' },
-  { name: 'DREBON', logo: null, url: '#' },
-  { name: 'PIDILITE', logo: null, url: '#' },
-  { name: 'UNIK', logo: null, url: '#' },
-  { name: 'KARTAR', logo: null, url: '#' },
-  { name: 'YG-1', logo: null, url: '#' },
-  { name: 'MIRANDA', logo: null, url: '#' },
-  { name: 'FENNER', logo: null, url: '#' },
-  { name: 'JANATICS', logo: null, url: '#' },
-  { name: 'TECHNO', logo: null, url: '#' },
-  { name: 'YATO', logo: null, url: '#' },
+
+const BRANDS = [
+  { name: 'Bosch',    logo: 'https://logo.clearbit.com/bosch.com' },
+  { name: 'DeWalt',   logo: 'https://logo.clearbit.com/dewalt.com' },
+  { name: 'Makita',   logo: 'https://logo.clearbit.com/makita.com' },
+  { name: 'Stanley',  logo: 'https://logo.clearbit.com/stanleytools.com' },
+  { name: 'Hilti',    logo: 'https://logo.clearbit.com/hilti.com' },
+  { name: 'Ingco',    logo: 'https://logo.clearbit.com/ingco.com' },
+  { name: 'Total',    logo: null },
+  { name: 'Yato',     logo: null },
+  { name: 'Unbrako',  logo: null },
+  { name: 'Taparia',  logo: null },
+  { name: 'Toptul',   logo: null },
+  { name: 'Pidilite', logo: 'https://logo.clearbit.com/pidilite.in' },
+  { name: 'Mitutoyo', logo: 'https://logo.clearbit.com/mitutoyo.com' },
 ];
 
-const BrandCard = ({ brand }) => (
-  <div
-    className="flex-shrink-0 flex items-center justify-center cursor-default group"
-    style={{
-      width: '180px',
-      height: '88px',
-      backgroundColor: '#FFFFFF',
-      border: '1px solid #E5E7EB',
-      borderRadius: '10px',
-      padding: '16px 20px',
-      transition: 'border-color 0.2s, box-shadow 0.2s, transform 0.2s',
-    }}
-    onMouseEnter={e => {
-      e.currentTarget.style.borderColor = '#C1121F';
-      e.currentTarget.style.boxShadow = '0 4px 16px rgba(193,18,31,0.1)';
-      e.currentTarget.style.transform = 'translateY(-2px)';
-    }}
-    onMouseLeave={e => {
-      e.currentTarget.style.borderColor = '#E5E7EB';
-      e.currentTarget.style.boxShadow = 'none';
-      e.currentTarget.style.transform = 'translateY(0)';
-    }}
-  >
-    {brand.logo ? (
-      <img
-        src={brand.logo}
-        alt={brand.name}
-        className="max-w-full max-h-full object-contain transition-all duration-300 group-hover:opacity-100"
-        style={{ filter: 'grayscale(100%)', opacity: 0.65, maxHeight: '44px', maxWidth: '130px' }}
-        onMouseEnter={e => { e.target.style.filter = 'grayscale(0%)'; e.target.style.opacity = 1; }}
-        onMouseLeave={e => { e.target.style.filter = 'grayscale(100%)'; e.target.style.opacity = 0.65; }}
-        onError={e => {
-          e.target.style.display = 'none';
-          e.target.nextSibling.style.display = 'block';
-        }}
-      />
-    ) : null}
-    <span
-      className="font-black uppercase tracking-widest text-center text-xs"
+const LogoPill = ({ brand }) => {
+  const [err, setErr] = React.useState(false);
+  return (
+    <div
+      className="flex-shrink-0 flex items-center justify-center gap-2 px-6"
       style={{
-        color: '#374151',
-        display: brand.logo ? 'none' : 'block',
-        letterSpacing: '0.12em',
-        lineHeight: 1.3,
+        height: '68px',
+        backgroundColor: 'var(--card)',
+        border: '1px solid var(--border)',
+        borderRadius: '10px',
+        minWidth: '140px',
+        marginRight: '12px',
+        boxShadow: '0 1px 6px rgba(0,0,0,0.05)',
+        transition: 'border-color 0.2s, box-shadow 0.2s',
       }}
+      onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--red)'; e.currentTarget.style.boxShadow = '0 3px 14px rgba(204,17,34,0.10)'; }}
+      onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.boxShadow = '0 1px 6px rgba(0,0,0,0.05)'; }}
     >
-      {brand.name}
-    </span>
-  </div>
-);
+      {brand.logo && !err ? (
+        <img
+          src={brand.logo}
+          alt={brand.name}
+          onError={() => setErr(true)}
+          style={{ maxHeight: '36px', maxWidth: '90px', objectFit: 'contain' }}
+        />
+      ) : (
+        <span style={{ fontSize: '13px', fontWeight: 800, color: 'var(--sub)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+          {brand.name}
+        </span>
+      )}
+    </div>
+  );
+};
 
-const Brands = () => {
-  const row1 = [...brands.slice(0, 12), ...brands.slice(0, 12)];
-  const row2 = [...brands.slice(12), ...brands.slice(12), ...brands.slice(12)];
+const scrollTo = (href, e) => {
+  if (e) e.preventDefault();
+  const el = document.getElementById(href.replace('#', ''));
+  if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 78, behavior: 'smooth' });
+};
+
+export default function Brands() {
+  // Duplicate for seamless loop
+  const doubled = [...BRANDS, ...BRANDS];
 
   return (
-    <section id="brands" className="py-24 overflow-hidden" style={{ backgroundColor: '#F5F5F5', scrollMarginTop: '80px' }}>
-      <div className="container mx-auto px-6 lg:px-12 mb-14 text-center">
+    <section id="brands" className="py-20" style={{ backgroundColor: 'var(--bg)' }}>
+      <div className="container mx-auto px-6 lg:px-12 mb-10 text-center">
         <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="h-[2px] w-8" style={{ backgroundColor: '#C1121F' }} />
-          <span className="font-semibold tracking-wider uppercase text-sm" style={{ color: '#C1121F' }}>Our Partners</span>
-          <div className="h-[2px] w-8" style={{ backgroundColor: '#C1121F' }} />
+          <div className="h-[1.5px] w-7" style={{ backgroundColor: 'var(--red)' }} />
+          <span className="text-[11px] font-bold tracking-[0.18em] uppercase" style={{ color: 'var(--red)' }}>Our Partners</span>
+          <div className="h-[1.5px] w-7" style={{ backgroundColor: 'var(--red)' }} />
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#111111' }}>Authorized Dealer Brands</h2>
-        <p className="text-lg" style={{ color: '#4B5563' }}>
+        <h2 className="text-3xl md:text-[2rem] font-black mb-2.5" style={{ color: 'var(--text)' }}>
+          Authorized Dealer Brands
+        </h2>
+        <p style={{ color: 'var(--muted)', fontSize: '15px' }}>
           Official authorized dealer for 25+ world-class industrial brands
         </p>
       </div>
 
-      {/* Marquee rows */}
-      <div className="relative w-full overflow-hidden flex flex-col gap-5">
-        {/* Left/right fade masks */}
-        <div className="absolute top-0 left-0 w-24 h-full z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #F5F5F5, transparent)' }} />
-        <div className="absolute top-0 right-0 w-24 h-full z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #F5F5F5, transparent)' }} />
+      {/* Marquee */}
+      <div className="relative overflow-hidden">
+        {/* Left/right fade masks matching beige bg */}
+        <div className="absolute top-0 left-0 h-full w-24 z-10 pointer-events-none"
+          style={{ background: 'linear-gradient(to right, var(--bg), transparent)' }} />
+        <div className="absolute top-0 right-0 h-full w-24 z-10 pointer-events-none"
+          style={{ background: 'linear-gradient(to left, var(--bg), transparent)' }} />
 
-        {/* Row 1 — left scroll */}
-        <div className="flex w-max animate-[slide_40s_linear_infinite] hover:[animation-play-state:paused]">
-          <div className="flex items-center gap-4 px-2">
-            {row1.map((brand, i) => <BrandCard key={`r1-${i}`} brand={brand} />)}
-          </div>
-        </div>
-
-        {/* Row 2 — right scroll */}
-        <div className="flex w-max animate-[slide-reverse_50s_linear_infinite] hover:[animation-play-state:paused]">
-          <div className="flex items-center gap-4 px-2">
-            {row2.map((brand, i) => <BrandCard key={`r2-${i}`} brand={brand} />)}
-          </div>
+        <div
+          className="flex group"
+          style={{ animation: 'marquee 38s linear infinite', width: 'max-content' }}
+        >
+          {doubled.map((b, i) => <LogoPill key={i} brand={b} />)}
         </div>
       </div>
 
-      {/* Static grid fallback for very small screens */}
-      <div className="mt-10 container mx-auto px-6 lg:px-12 flex flex-wrap justify-center gap-3 md:hidden">
-        {brands.map((brand, i) => (
-          <div
-            key={i}
-            className="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider"
-            style={{ backgroundColor: '#FFFFFF', border: '1px solid #E5E7EB', color: '#374151' }}
-          >
-            {brand.name}
-          </div>
-        ))}
+      {/* More brands badge + CTA */}
+      <div className="container mx-auto px-6 lg:px-12 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div
+          className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
+          style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--sub)' }}
+        >
+          <span style={{ color: 'var(--red)', fontWeight: 800 }}>+13</span> More Brands Available
+        </div>
+        <a
+          href="#contact"
+          onClick={e => scrollTo('#contact', e)}
+          className="btn-primary px-6 py-2.5 text-sm"
+        >
+          Request Full Brand Catalog →
+        </a>
       </div>
+
+      <style>{`
+        @keyframes marquee {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .group:hover { animation-play-state: paused; }
+      `}</style>
     </section>
   );
-};
-
-export default Brands;
+}

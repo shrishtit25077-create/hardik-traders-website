@@ -1,44 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        industrial: {
-          red:      '#C1121F',
-          redhov:   '#A30F1A',
-          charcoal: '#111111',
-          surface:  '#F5F5F5',
-          light:    '#FAFAFA',
-          border:   '#E5E7EB',
-          textDark: '#111111',
-          textSub:  '#4B5563',
-          textMuted:'#9CA3AF',
-          // Legacy aliases
-          orange:   '#C1121F',
-          gold:     '#C1121F',
+        brand: {
+          red:    '#E1062C',
+          hover:  '#C40024',
+          tint:   'rgba(225,6,44,0.06)',
+          tint2:  'rgba(225,6,44,0.12)',
         }
       },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-      },
+      fontFamily: { sans: ['Inter', 'sans-serif'] },
       keyframes: {
-        slide: {
-          '0%':   { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' }
-        },
-        'slide-reverse': {
-          '0%':   { transform: 'translateX(-50%)' },
-          '100%': { transform: 'translateX(0)' }
-        }
+        slide:          { '0%': { transform: 'translateX(0)' },    '100%': { transform: 'translateX(-50%)' } },
+        'slide-reverse':{ '0%': { transform: 'translateX(-50%)' }, '100%': { transform: 'translateX(0)' } },
+        float:          { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' } },
+        shimmer:        { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
       },
       animation: {
-        'slide':         'slide 30s linear infinite',
-        'slide-reverse': 'slide-reverse 35s linear infinite'
-      }
+        'slide':         'slide 35s linear infinite',
+        'slide-reverse': 'slide-reverse 42s linear infinite',
+        'float':         'float 4s ease-in-out infinite',
+        'shimmer':       'shimmer 2.5s linear infinite',
+      },
     },
   },
   plugins: [],
