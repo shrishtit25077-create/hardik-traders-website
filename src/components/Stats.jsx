@@ -18,10 +18,10 @@ const useCounter = (end, active = false) => {
 };
 
 const STATS = [
-  { end: 25,   suffix: '+', label: 'Premium Brands',     Icon: ShieldCheck },
-  { end: 15,   suffix: '+', label: 'Product Categories', Icon: Package },
-  { end: 10,   suffix: '+', label: 'Years Experience',   Icon: Clock },
-  { end: 1500, suffix: '+', label: 'Industrial Clients', Icon: Users },
+  { end: 30,   suffix: '+', label: 'Premium Brands',     Icon: ShieldCheck },
+  { end: 19,   suffix: '+', label: 'Product Categories', Icon: Package },
+  { end: 24,   suffix: '+', label: 'Years Experience',   Icon: Clock },
+  { end: 5000, suffix: '+', label: 'Industrial Clients', Icon: Users },
 ];
 
 function StatItem({ s, active, i }) {

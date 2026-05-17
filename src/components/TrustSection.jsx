@@ -6,7 +6,7 @@ const TRUST = [
   {
     Icon: ShieldCheck,
     title: 'Authorized Dealer',
-    desc: 'Official authorized dealer for 25+ premium global industrial brands since 2014.',
+    desc: 'Official authorized dealer for 30+ premium global industrial brands since 2001.',
     color: '#1A6CB5',
   },
   {

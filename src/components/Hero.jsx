@@ -61,7 +61,7 @@ export default function Hero() {
               className="flex items-center gap-3 mb-5">
               <div className="h-[2px] w-9" style={{ backgroundColor: 'var(--red)' }} />
               <span className="text-[11px] font-bold tracking-[0.18em] uppercase" style={{ color: 'var(--red)' }}>
-                Industrial Excellence Since 2014
+                Industrial Excellence Since 2001
               </span>
             </motion.div>
 

@@ -37,7 +37,7 @@ export default function About() {
               className="absolute -bottom-5 -right-5 hidden md:block text-white p-5 rounded-2xl"
               style={{ backgroundColor: 'var(--red)', boxShadow: '0 8px 28px rgba(225,6,44,0.32)' }}
             >
-              <div className="text-4xl font-black mb-0.5">10+</div>
+              <div className="text-4xl font-black mb-0.5">24+</div>
               <div className="text-[11px] font-bold uppercase tracking-widest opacity-90">Years of<br />Excellence</div>
             </motion.div>
           </motion.div>

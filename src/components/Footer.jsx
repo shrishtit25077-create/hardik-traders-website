@@ -12,11 +12,11 @@ const LINKS   = [
   { name: 'Products', href: '#products' }, { name: 'Brands', href: '#brands' },
   { name: 'Contact', href: '#contact' },
 ];
-const CATS    = ['Power Tools', 'Hand Tools', 'Air Tools', 'Welding Equipment', 'Bearings & Fasteners', 'Hydraulic Tools', 'Measuring Instruments'];
+const CATS    = ['Power Tools', 'Hand Tools', 'Sensors & Automation', 'Bearings', 'Pneumatics', 'Hydraulics', 'Measuring Instruments', 'Lubricants', 'Electricals & Electronics', 'Belts & Belting', 'Torque Tools', 'Temperature Control', 'Moulding Components', 'Tsubaki Components', 'Filter Products'];
 const SOCIALS = [{ Icon: Instagram, href: '#' }, { Icon: Linkedin, href: '#' }, { Icon: Youtube, href: '#' }];
 
 const TRUST = [
-  { Icon: BadgeCheck, label: 'Authorized Dealer Since 2014' },
+  { Icon: BadgeCheck, label: 'Authorized Dealer Since 2001' },
   { Icon: Shield,     label: 'ISO 9001:2015 Compliant' },
   { Icon: FileText,   label: 'GST: 06CYFPS9701M1ZU' },
 ];
@@ -51,7 +51,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-[13px] leading-relaxed mb-5" style={{ lineHeight: 1.7 }}>
-              Authorized dealer for 25+ global industrial brands. Trusted supplier of quality engineering tools across India since 2014.
+              Authorized dealer for 30+ global industrial brands. Trusted supplier of quality engineering tools across India since 2001.
             </p>
             <div className="flex gap-2.5">
               {SOCIALS.map(({ Icon, href }, i) => (
