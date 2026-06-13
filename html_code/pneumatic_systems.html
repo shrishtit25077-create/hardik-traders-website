@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pneumatic Systems | Hardik Traders</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #131313;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .brutal-border {
+            border: 2px solid #5b403d;
+        }
+        .brutal-border-active {
+            border: 2px solid #ffb3ac;
+        }
+        .brutal-shadow {
+            box-shadow: 4px 4px 0px 0px #ba1a20;
+        }
+        .brutal-shadow-hover:hover {
+            box-shadow: 6px 6px 0px 0px #ffb3ac;
+            transform: translate(-2px, -2px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary-fixed-variant": "#930010",
+                        "on-background": "#e5e2e1",
+                        "surface-container-low": "#1b1c1c",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary": "#c6c6c6",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "primary": "#ffb3ac",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary-container": "#b5b5b5",
+                        "surface-dim": "#131313",
+                        "outline-variant": "#5b403d",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#e4beba",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-primary": "#680008",
+                        "outline": "#ab8985",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container": "#202020",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary-fixed": "#410003",
+                        "surface-tint": "#ffb3ac",
+                        "background": "#131313",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary-container": "#f4f4f4",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3131",
+                        "surface-bright": "#393939",
+                        "tertiary": "#c6c6c7",
+                        "on-primary-container": "#fff2f0",
+                        "on-secondary": "#303030",
+                        "secondary-container": "#474747",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353535",
+                        "primary-fixed": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed-variant": "#474747",
+                        "inverse-primary": "#ba1a20",
+                        "primary-container": "#d32f2f",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "tertiary-container": "#6e7070",
+                        "inverse-on-surface": "#303030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "base": "8px",
+                        "column-count": "12",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<header class="bg-surface dark:bg-surface-container-lowest border-b border-outline-variant dark:border-outline shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-[1120px] mx-auto h-[72px]">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+                Hardik Traders
+            </div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block px-6 py-2 bg-primary-container text-on-primary-container font-label-bold text-label-bold uppercase tracking-wider active:scale-95 transition-all">
+                    Get Quote
+                </button>
+<button class="p-2 text-primary">
+<span class="material-symbols-outlined">call</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Hero Section / Category Header -->
+<section class="mb-16 border-l-8 border-primary-container pl-8">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-primary mb-2 block">Industrial Solutions</span>
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-4">Pneumatic Systems</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                High-performance engineered precision for industrial automation. We supply genuine cylinders, valves, and air preparation units from global leaders.
+            </p>
+<div class="flex flex-wrap gap-4 mt-8">
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-weight="fill">verified</span>
+<span class="font-label-bold text-label-bold">Authorized Festo Distributor</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-weight="fill">verified</span>
+<span class="font-label-bold text-label-bold">Authorized SMC Partner</span>
+</div>
+</div>
+</section>
+<!-- Category Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-20">
+<!-- Sidebar Filters -->
+<aside class="md:col-span-3 space-y-8">
+<div>
+<h3 class="font-label-bold text-label-bold uppercase border-b border-outline-variant pb-2 mb-4">Categories</h3>
+<ul class="space-y-2">
+<li><a class="flex justify-between items-center p-2 bg-primary-container text-on-primary-container font-label-bold" href="#"><span>Cylinders</span><span class="material-symbols-outlined">chevron_right</span></a></li>
+<li><a class="flex justify-between items-center p-2 hover:bg-surface-container-highest transition-colors font-body-md" href="#"><span>Valves &amp; Manifolds</span><span class="material-symbols-outlined">chevron_right</span></a></li>
+<li><a class="flex justify-between items-center p-2 hover:bg-surface-container-highest transition-colors font-body-md" href="#"><span>Air Preparation</span><span class="material-symbols-outlined">chevron_right</span></a></li>
+<li><a class="flex justify-between items-center p-2 hover:bg-surface-container-highest transition-colors font-body-md" href="#"><span>Fittings &amp; Tubing</span><span class="material-symbols-outlined">chevron_right</span></a></li>
+<li><a class="flex justify-between items-center p-2 hover:bg-surface-container-highest transition-colors font-body-md" href="#"><span>Sensors</span><span class="material-symbols-outlined">chevron_right</span></a></li>
+</ul>
+</div>
+<div class="bg-surface-container p-6 border-2 border-primary-container brutal-shadow">
+<h4 class="font-label-bold text-label-bold text-primary uppercase mb-2">Technical Support</h4>
+<p class="font-body-md text-body-md mb-4 text-on-surface-variant">Need help with pneumatic calculations or sizing?</p>
+<button class="w-full py-3 bg-on-surface text-surface font-label-bold uppercase text-label-sm tracking-widest hover:bg-primary transition-colors">Speak to Engineer</button>
+</div>
+</aside>
+<!-- Product Display -->
+<div class="md:col-span-9">
+<div class="flex justify-between items-end mb-8">
+<h2 class="font-headline-md text-headline-md">Industrial Pneumatics <span class="text-outline">(248 Products)</span></h2>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">grid_view</span></button>
+<button class="p-2 border border-outline-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">view_list</span></button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group bg-surface-container border-2 border-outline-variant brutal-shadow-hover transition-all duration-300">
+<div class="relative h-48 bg-surface-container-low overflow-hidden">
+<img alt="Pneumatic Cylinder" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A macro close-up of a high-precision industrial pneumatic cylinder made of brushed stainless steel. The lighting is cold and clinical, emphasizing the metallic textures and sharp edges of the machinery. The background is a dark, industrial workshop with subtle hints of red control panels. The overall aesthetic is heavy brutalism with extreme structural integrity and mechanical precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlOWSZU_J-H8CHjdTIu2DvI5-88RWbVM74Q2Ey-WFC0sNl-7v8fCev0WrYs7QTnA7brbgYLQkNNllmlbTXYg_y9QgaY6JNlt3BR58V-sWTCPcTetrmt0xbAqxTYZ5QGYllUwEGf5aI5ruenWidi-PeX7mBZIrxnxOdFu1u32hutFLzbX_RHzUMPdmWxI9Ahna8c5RlI-JVwA-M_hLsvieX5L31dT3SlmMRvGZ9zty1pSxbkgbgYOuYuSwy4MVdx68xV8HJum6JNuGv"/>
+<div class="absolute top-0 right-0 bg-primary-container text-on-primary-container px-3 py-1 font-label-sm">FESTO</div>
+</div>
+<div class="p-4">
+<h3 class="font-label-bold text-label-bold mb-2 uppercase group-hover:text-primary transition-colors">DSBC ISO Cylinder</h3>
+<div class="space-y-1 mb-4">
+<div class="flex justify-between border-b border-outline-variant py-1">
+<span class="font-label-sm text-outline">Bore Size</span>
+<span class="font-label-sm">32 - 125 mm</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant py-1">
+<span class="font-label-sm text-outline">Stroke</span>
+<span class="font-label-sm">1 - 2800 mm</span>
+</div>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface group-hover:bg-primary transition-colors font-label-bold text-label-sm uppercase">Inquire Now</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-surface-container border-2 border-outline-variant brutal-shadow-hover transition-all duration-300">
+<div class="relative h-48 bg-surface-container-low overflow-hidden">
+<img alt="Solenoid Valve" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A high-density array of industrial pneumatic valves and manifolds arranged in a complex, technical layout. The valves are matte black with high-contrast red indicator lights. The scene is shot from a low angle to evoke a sense of power and scale. The lighting is harsh, creating deep shadows that emphasize the blocky, brutalist design of the pneumatic system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD12o1-0AqJzPQxn8gyWdgi4derJcM0OkaIXYNLrKym8w4s8oGOULoRXZXVVfoFSNs-2NBCVUf8l82GJv5kWazGQ1hQ4KLi2xSapbV3haI9dpbNjXnq2Pjn7QI4a1-ncBsqsl95qBzTSUmW3ntot2KRrPDRC8aqMIfxF1ZCMbwe4C-fBnMXk7Y63k_q7OaFzYPOfGAvVrFc3aq4M_lBSnWBKfziaphq8jdYXiGAtK1e4Tt4HSj0kPbN2c1iga8hCFsV6Rhjw4ApVHBE"/>
+<div class="absolute top-0 right-0 bg-secondary-container text-on-secondary-container px-3 py-1 font-label-sm">SMC</div>
+</div>
+<div class="p-4">
+<h3 class="font-label-bold text-label-bold mb-2 uppercase group-hover:text-primary transition-colors">SY5000 Solenoid Valve</h3>
+<div class="space-y-1 mb-4">
+<div class="flex justify-between border-b border-outline-variant py-1">
+<span class="font-label-sm text-outline">Port Size</span>
+<span class="font-label-sm">1/8 - 1/4"</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant py-1">
+<span class="font-label-sm text-outline">Voltage</span>
+<span class="font-label-sm">24V DC / 220V AC</span>
+</div>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface group-hover:bg-primary transition-colors font-label-bold text-label-sm uppercase">Inquire Now</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-surface-container border-2 border-outline-variant brutal-shadow-hover transition-all duration-300">
+<div class="relative h-48 bg-surface-container-low overflow-hidden">
+<img alt="Air Preparation" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A heavy-duty air preparation unit consisting of a filter, regulator, and lubricator, mounted on a dark textured metal wall. The components are bulky and industrial, featuring large analog pressure gauges with stark red needles. The overall mood is authoritarian and precise, with high contrast lighting that highlights the thick glass and metal housing of the air treatment unit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGDKxC2zCqiggpqeyE4KUK2YiwFVpZS3nkgFY7SvAjGsskHJwhrtO81nl5aozM3IiZtn83h82d8EKFMgOBbliN0FqWQ1MJq4gNcD5scOYJvbRMB16lWxUn4bOnzc04zsHQCmHWw3OHfFFKQ7l2NwzGEdQT7-whMmfO9sWRUHjgwVhpdEIbvT_l9dl4FMJHuT4Xvwjr3DHjjubeOPXPUkGkyhGZMUrFaDW4MI1s-jDh87as8DSKPOQlzdU3ZI4F67uTl4XM-k85gYq_"/>
+<div class="absolute top-0 right-0 bg-primary-container text-on-primary-container px-3 py-1 font-label-sm">FESTO</div>
+</div>
+<div class="p-4">
+<h3 class="font-label-bold text-label-bold mb-2 uppercase group-hover:text-primary transition-colors">MS Series FRL Unit</h3>
+<div class="space-y-1 mb-4">
+<div class="flex justify-between border-b border-outline-variant py-1">
+<span class="font-label-sm text-outline">Flow Rate</span>
+<span class="font-label-sm">1000 - 22000 l/min</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant py-1">
+<span class="font-label-sm text-outline">Filtration</span>
+<span class="font-label-sm">5 - 40 µm</span>
+</div>
+</div>
+<button class="w-full py-2 bg-on-surface text-surface group-hover:bg-primary transition-colors font-label-bold text-label-sm uppercase">Inquire Now</button>
+</div>
+</div>
+<!-- Additional Product Cards as needed... -->
+</div>
+<!-- Technical Specs / Data Table -->
+<div class="mt-20">
+<h2 class="font-headline-md text-headline-md mb-8 border-b-4 border-primary inline-block">Engineering Standards</h2>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-surface-container-highest border-y-2 border-outline">
+<th class="p-4 text-left font-label-bold uppercase">Standard ID</th>
+<th class="p-4 text-left font-label-bold uppercase">Description</th>
+<th class="p-4 text-left font-label-bold uppercase">Compliance</th>
+<th class="p-4 text-left font-label-bold uppercase">Download</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-label-bold text-primary">ISO 15552</td>
+<td class="p-4 font-body-md">Standard for pneumatic cylinder dimensions</td>
+<td class="p-4 font-body-md"><span class="bg-green-900 text-green-100 px-2 py-1 text-xs">CERTIFIED</span></td>
+<td class="p-4"><span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">picture_as_pdf</span></td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-label-bold text-primary">ISO 5599-1</td>
+<td class="p-4 font-body-md">Pneumatic fluid power - Five-port directional control valves</td>
+<td class="p-4 font-body-md"><span class="bg-green-900 text-green-100 px-2 py-1 text-xs">CERTIFIED</span></td>
+<td class="p-4"><span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">picture_as_pdf</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-surface-container-lowest text-on-primary dark:text-on-surface">
+<div class="w-full py-xl px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-[1120px] mx-auto">
+<div class="space-y-4">
+<div class="font-headline-md text-headline-md font-bold text-on-primary dark:text-primary">
+                    Hardik Traders
+                </div>
+<p class="font-body-sm text-body-sm opacity-80">
+                    Industrial bearing and pneumatic solutions with engineered precision. Serving heavy manufacturing since 1994.
+                </p>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase mb-4 tracking-widest">Solutions</h4>
+<ul class="space-y-2 font-body-sm">
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors" href="#">Ball Bearings</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors" href="#">Roller Bearings</a></li>
+<li><a class="text-on-primary dark:text-primary font-semibold underline" href="#">Pneumatic Cylinders</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors" href="#">Linear Guides</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase mb-4 tracking-widest">Support</h4>
+<ul class="space-y-2 font-body-sm">
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors" href="#">Technical Catalog</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors" href="#">Service Manuals</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors" href="#">Authorized Centers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase mb-4 tracking-widest">Legal</h4>
+<ul class="space-y-2 font-body-sm">
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-on-primary/10 dark:border-outline-variant py-6 max-w-[1120px] mx-auto px-margin-desktop text-center">
+<p class="font-body-sm text-body-sm opacity-60">© 2024 Hardik Traders. All rights reserved. Industrial bearing solutions with engineered precision.</p>
+</div>
+</footer>
+<!-- Mobile Navigation Shell -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-surface-container border-t border-outline-variant z-50">
+<div class="flex justify-around items-center h-16">
+<a class="flex flex-col items-center text-outline hover:text-primary" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] uppercase font-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="text-[10px] uppercase font-label-bold">Products</span>
+</a>
+<a class="flex flex-col items-center text-outline hover:text-primary" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] uppercase font-label-bold">Search</span>
+</a>
+<a class="flex flex-col items-center text-outline hover:text-primary" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-[10px] uppercase font-label-bold">Quote</span>
+</a>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HGR-25 High-Precision Linear Guide | Hardik Traders</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-primary-fixed-variant": "#930010",
+                        "on-background": "#e5e2e1",
+                        "surface-container-low": "#1b1c1c",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary": "#c6c6c6",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "primary": "#ffb3ac",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary-container": "#b5b5b5",
+                        "surface-dim": "#131313",
+                        "outline-variant": "#5b403d",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#e4beba",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-primary": "#680008",
+                        "outline": "#ab8985",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container": "#202020",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary-fixed": "#410003",
+                        "surface-tint": "#ffb3ac",
+                        "background": "#131313",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary-container": "#f4f4f4",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#2f3131",
+                        "surface-bright": "#393939",
+                        "tertiary": "#c6c6c7",
+                        "on-primary-container": "#fff2f0",
+                        "on-secondary": "#303030",
+                        "secondary-container": "#474747",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#353535",
+                        "primary-fixed": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed-variant": "#474747",
+                        "inverse-primary": "#ba1a20",
+                        "primary-container": "#d32f2f",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "tertiary-container": "#6e7070",
+                        "inverse-on-surface": "#303030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "base": "8px",
+                        "column-count": "12",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Heavy Brutalist Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #d32f2f; }
+        
+        .industrial-grid {
+            background-image: radial-gradient(circle, #353535 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background industrial-grid min-h-screen font-body-md selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container-lowest border-b border-outline-variant dark:border-outline shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-[1120px] mx-auto h-[72px]">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed uppercase tracking-tighter">
+                Hardik Traders
+            </div>
+<nav class="hidden md:flex gap-base">
+<a class="px-4 py-2 text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md" href="#">Home</a>
+<a class="px-4 py-2 text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md" href="#">About</a>
+<a class="px-4 py-2 text-primary dark:text-primary-fixed font-bold border-b-2 border-primary pb-1 font-body-md" href="#">Products</a>
+<a class="px-4 py-2 text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block bg-primary-container text-on-primary-container px-6 py-2 font-label-bold uppercase tracking-widest active:scale-95 transition-transform">
+                    Get Quote
+                </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Breadcrumb & Title -->
+<div class="mb-8 border-l-4 border-primary-container pl-4">
+<span class="text-label-sm uppercase tracking-widest text-outline">Industrial Components / Linear Motion</span>
+<h1 class="font-headline-xl text-headline-xl text-on-background mt-2 uppercase">HGR-25 Series Linear Rail</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl">Heavy-duty high-precision linear guide system with four-row circular arc contact, engineered for high rigidity and load capacity.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Media & Specs (8 Cols) -->
+<div class="lg:col-span-8 space-y-gutter">
+<!-- Main Gallery -->
+<div class="border-2 border-outline-variant bg-surface-container-lowest p-base">
+<div class="aspect-video bg-surface-container relative overflow-hidden mb-base">
+<img alt="Linear Guide Rail Close-up" class="w-full h-full object-cover grayscale contrast-125" data-alt="A macro photograph of a high-precision stainless steel linear guide rail and its sliding block. The image highlights the intricate ball-bearing tracks and the heavy industrial finish of the metal. The lighting is dramatic and cool-toned, casting deep shadows that emphasize the structural rigidity. The overall aesthetic is dark, raw, and professional, perfectly aligned with a high-end industrial engineering brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1_EqFOxrx_wsfAXPf-a0lrLUBP24nRPacFzKXo4dttIvGgmjmhAkz801Pl-KyMyvkdyDWrSa2f7dlMz4VYFzx-pnASMhLZFyxyWi629Czw6q5FFXgHABGw2K1lRT77VeqrlgGM0Bd6aQ5hSEAyIcgp7n5tJOmeIQC0M-hLbS_9a7j7re3NeTDvcToHXYBaYcScZBXxbb6mS4SYscPeJxcirwi417EvgOQY49mf0zXlm6fSBMZWz9AoYf7irDR-uCHW-L2ETG3wiVJ"/>
+<div class="absolute top-4 left-4 bg-primary-container text-on-primary px-3 py-1 font-label-bold text-label-sm uppercase">Precision: UP-Class</div>
+</div>
+<div class="grid grid-cols-4 gap-base">
+<div class="aspect-square border border-primary bg-surface-container cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="Angle 1" class="w-full h-full object-cover grayscale" data-alt="Close-up detail of the steel bearing surface on a linear guide rail, showing the smooth polished finish and precise mounting holes. The mood is industrial and technical, with high contrast between metallic highlights and deep charcoal shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe7ydx2USUamEzO_7u5LkIiTvW7S-LSfCJvcVQBzC8Qofc1a1B4R3-norsbDsLM9e0-mWve3soMc6Vv-TpGmEAQLxowbxR2qDBeSmV9euFB6Vqvd-_5QxIoSLgc_Kcj3gD6zZoMdR2sow7uZ0TsRgcUB03DbHVYB1nbijQ-YAFWSkiLX1FAM0F0WaBc-N-wMTLmxLygNUbYmOtMZuTEez9hw8d7Scs-aMXEAMpFTngr1CGji1IyR95D-5t2xBSyrq2wHkpXalpak9f"/>
+</div>
+<div class="aspect-square border border-outline-variant bg-surface-container cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="Angle 2" class="w-full h-full object-cover grayscale" data-alt="Side profile of a linear guide block mounted on a rail, illustrating the low profile and robust design. Strong directional lighting reveals the precision-ground surfaces. The image uses a monochromatic palette with heavy industrial vibes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMun9zNwQzY9vX9sNbiZePSGaTlSikpZsbb28E4rl2B4uNA8I562MAwN_oW4w4dNcn-uPZAITTYfhQiawAmnWeVjvcZt5eVV2TBWYaMLmx-5T9WElwOC1QGdL3UdmwYk7uiaSYSYoOs7p2DVl6hv7YoQsFmR-pmEJI-l5i_ve__5VAzuU8PELmZu0RoAOUEA8QQtRr1zp950pi9O451ls9g99t23teiakXzCZtPA3QjFq9-wXgtMDzkuiscOocCR2YNMokL3GxHi1A"/>
+</div>
+<div class="aspect-square border border-outline-variant bg-surface-container cursor-pointer hover:opacity-80 transition-opacity">
+<img alt="Angle 3" class="w-full h-full object-cover grayscale" data-alt="Technical assembly view of multiple linear guides in an automated industrial environment. The focus is sharp on the foreground rail, with a blurred background suggesting a high-tech manufacturing facility. The lighting is cold and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABF2F5UVaRZU8mNuFK6raAFYag4qqJLmO9LzrVN_WRCuOJf_WaTcyWQZ2Xne13HZ4j2b7FhCUgFHyUClFkjZOM1cR8Aydji5WkKk181SXl0RJUXQnTm07YTtbzLZ6ZlUJPjKhKlo4UQktj5mokQaMgrqT2oMN_R3roa9mCXJDS6S9i_bZIrGBbxLDQa4n6WXCBXDqk7oSPtBuYtqPGFZvx6jXQl05xs2rItILRJifB9NvoV6JnqD0vaujeoc9eYhepEoBmFzuNkdK0"/>
+</div>
+<div class="aspect-square border border-outline-variant bg-surface-container flex items-center justify-center cursor-pointer hover:bg-surface-variant transition-colors group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary">view_in_ar</span>
+<span class="hidden">3D View</span>
+</div>
+</div>
+</div>
+<!-- Technical Specifications -->
+<div class="border-2 border-outline-variant bg-surface">
+<div class="bg-surface-container-high px-6 py-4 flex items-center justify-between border-b-2 border-outline-variant">
+<h2 class="font-headline-md text-headline-md uppercase tracking-tight">Technical Data</h2>
+<span class="material-symbols-outlined text-primary" data-weight="fill">settings_input_component</span>
+</div>
+<div class="p-0 overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-6 py-4 font-label-bold text-label-sm uppercase tracking-widest text-outline">Parameter</th>
+<th class="px-6 py-4 font-label-bold text-label-sm uppercase tracking-widest text-outline">HGR-25R Specification</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr>
+<td class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase">Model Number</td>
+<td class="px-6 py-4 font-body-md">HGR25R-1000H-UP</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase">Precision Class</td>
+<td class="px-6 py-4 font-body-md">Ultra Precision (UP) / 0.005mm</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase">Preload Code</td>
+<td class="px-6 py-4 font-body-md">ZA (Medium Preload)</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase">Rail Lengths</td>
+<td class="px-6 py-4 font-body-md">100mm to 4000mm (Customizable)</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase">Basic Dynamic Load</td>
+<td class="px-6 py-4 font-body-md">26.48 kN</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-label-bold text-label-bold text-on-surface-variant uppercase">Material</td>
+<td class="px-6 py-4 font-body-md">High Carbon Chrome Bearing Steel (S55C)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- CAD & Downloads Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-base">
+<div class="border-2 border-outline-variant p-6 hover:border-primary transition-colors group cursor-pointer bg-surface">
+<div class="flex items-center gap-4 mb-2">
+<span class="material-symbols-outlined text-primary text-3xl">architecture</span>
+<h3 class="font-headline-md text-headline-md uppercase">2D Drawing (DWG)</h3>
+</div>
+<p class="text-body-md text-outline-variant group-hover:text-on-surface transition-colors">Complete dimensional blueprints for engineering integration.</p>
+<div class="mt-4 flex items-center text-primary font-label-bold gap-2">
+<span>DOWNLOAD FILE</span>
+<span class="material-symbols-outlined">download</span>
+</div>
+</div>
+<div class="border-2 border-outline-variant p-6 hover:border-primary transition-colors group cursor-pointer bg-surface">
+<div class="flex items-center gap-4 mb-2">
+<span class="material-symbols-outlined text-primary text-3xl">view_in_ar</span>
+<h3 class="font-headline-md text-headline-md uppercase">3D CAD Model (STEP)</h3>
+</div>
+<p class="text-body-md text-outline-variant group-hover:text-on-surface transition-colors">High-fidelity 3D models compatible with SolidWorks, CATIA, AutoCAD.</p>
+<div class="mt-4 flex items-center text-primary font-label-bold gap-2">
+<span>DOWNLOAD ASSET</span>
+<span class="material-symbols-outlined">download</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar Form (4 Cols) -->
+<aside class="lg:col-span-4 sticky top-24">
+<div class="border-4 border-primary-container bg-surface-container-lowest p-gutter relative overflow-hidden">
+<!-- Accent Pattern Overlay -->
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary-container -mr-12 -mt-12 rotate-45 opacity-20"></div>
+<h2 class="font-headline-md text-headline-md uppercase mb-4 relative z-10">Request Quotation</h2>
+<p class="text-label-sm uppercase tracking-widest text-outline mb-6">Response time: &lt; 2 Business Hours</p>
+<form class="space-y-6">
+<div class="space-y-1">
+<label class="font-label-sm uppercase text-outline">Full Name</label>
+<input class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary-container outline-none px-4 py-3 text-on-surface" placeholder="E.G. JOHN DOE" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm uppercase text-outline">Company Email</label>
+<input class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary-container outline-none px-4 py-3 text-on-surface" placeholder="NAME@INDUSTRY.COM" type="email"/>
+</div>
+<div class="grid grid-cols-2 gap-base">
+<div class="space-y-1">
+<label class="font-label-sm uppercase text-outline">Length (mm)</label>
+<input class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary-container outline-none px-4 py-3 text-on-surface" placeholder="1000" type="number"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm uppercase text-outline">Quantity</label>
+<input class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary-container outline-none px-4 py-3 text-on-surface" placeholder="4" type="number"/>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm uppercase text-outline">Precision Requirement</label>
+<select class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary-container outline-none px-4 py-3 text-on-surface appearance-none">
+<option>Normal (N)</option>
+<option>High (H)</option>
+<option>Precision (P)</option>
+<option>Super Precision (SP)</option>
+<option selected="">Ultra Precision (UP)</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm uppercase text-outline">Additional Notes</label>
+<textarea class="w-full bg-surface-container border-2 border-outline-variant focus:border-primary-container outline-none px-4 py-3 text-on-surface resize-none" placeholder="OPTIONAL SPECIFICATIONS..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 font-headline-md uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all" type="submit">
+                            Submit RFQ
+                        </button>
+</form>
+<div class="mt-8 pt-6 border-t border-outline-variant flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary">phone_in_talk</span>
+</div>
+<div>
+<p class="text-label-sm uppercase text-outline">Immediate Support</p>
+<p class="font-label-bold text-on-surface">+91 (22) 555-0198</p>
+</div>
+</div>
+</div>
+<!-- Trust Badge -->
+<div class="mt-4 border-2 border-outline-variant bg-surface p-4 flex items-center gap-4 grayscale opacity-60">
+<span class="material-symbols-outlined text-3xl">verified</span>
+<span class="text-label-sm font-label-bold uppercase">Certified Industrial Quality Standards ISO 9001:2015</span>
+</div>
+</aside>
+</div>
+<!-- Secondary Info Bento -->
+<section class="mt-24">
+<h2 class="font-headline-xl text-headline-xl uppercase mb-12 border-b-8 border-primary-container inline-block">Key Advantages</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-high p-8 border-t-4 border-primary-container">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">precision_manufacturing</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Interchangeability</h3>
+<p class="text-body-md text-on-surface-variant">Precision dimensions are maintained within strict tolerances, allowing for seamless block or rail replacement without compromising system accuracy.</p>
+</div>
+<div class="bg-surface-container-high p-8 border-t-4 border-primary-container">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">settings_suggest</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Low Noise</h3>
+<p class="text-body-md text-on-surface-variant">The optimized ball recirculation system and synch-motion technology provide smooth, quiet operation even at high traversing speeds.</p>
+</div>
+<div class="bg-surface-container-high p-8 border-t-4 border-primary-container">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">fitness_center</span>
+<h3 class="font-headline-md text-headline-md uppercase mb-2">High Load Rating</h3>
+<p class="text-body-md text-on-surface-variant">Four-row design provides equal load capacity in radial, reverse radial, and lateral directions, ensuring stability in any mounting orientation.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-surface-container-lowest mt-24">
+<div class="w-full py-16 px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-[1120px] mx-auto">
+<div class="md:col-span-2">
+<div class="font-headline-md text-headline-md font-bold text-on-primary dark:text-primary mb-6 uppercase">Hardik Traders</div>
+<p class="text-primary-fixed-dim dark:text-on-surface-variant max-w-sm mb-8 font-body-sm">
+                    © 2024 Hardik Traders. All rights reserved. Industrial bearing solutions with engineered precision. Delivering reliability to the global manufacturing sector.
+                </p>
+<div class="flex gap-4">
+<div class="w-10 h-10 border border-primary-fixed-dim flex items-center justify-center hover:bg-primary-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-primary dark:text-primary">share</span>
+</div>
+<div class="w-10 h-10 border border-primary-fixed-dim flex items-center justify-center hover:bg-primary-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-primary dark:text-primary">mail</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-bold uppercase text-on-primary dark:text-on-surface">Products</h4>
+<ul class="space-y-2">
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm" href="#">Ball Bearings</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm" href="#">Roller Bearings</a></li>
+<li><a class="text-on-primary dark:text-primary font-semibold underline font-body-sm" href="#">Linear Guides</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm" href="#">Industrial Seals</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-bold uppercase text-on-primary dark:text-on-surface">Compliance</h4>
+<ul class="space-y-2">
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for form and gallery
+        document.querySelectorAll('input, select, textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.parentElement.querySelector('label').classList.add('text-primary');
+            });
+            el.addEventListener('blur', () => {
+                el.parentElement.querySelector('label').classList.remove('text-primary');
+            });
+        });
+
+        // Hover effect for main image
+        const mainImg = document.querySelector('img[data-alt*="A macro photograph"]');
+        mainImg.parentElement.addEventListener('mousemove', (e) => {
+            const { left, top, width, height } = mainImg.getBoundingClientRect();
+            const x = (e.clientX - left) / width;
+            const y = (e.clientY - top) / height;
+            mainImg.style.transformOrigin = `${x * 100}% ${y * 100}%`;
+            mainImg.style.transform = 'scale(1.1)';
+        });
+        mainImg.parentElement.addEventListener('mouseleave', () => {
+            mainImg.style.transform = 'scale(1)';
+        });
+    </script>
+</body></html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Products | Hardik Traders - Industrial Bearing Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 24px;
+        }
+        .masonry-item-tall { grid-row: span 2; }
+        .masonry-item-wide { grid-column: span 2; }
+        @media (max-width: 768px) {
+            .masonry-item-wide { grid-column: span 1; }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#680008",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "on-tertiary": "#2f3131",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-container": "#d32f2f",
+                        "on-secondary-fixed-variant": "#474747",
+                        "surface-tint": "#ffb3ac",
+                        "on-surface-variant": "#e4beba",
+                        "surface-container-highest": "#353535",
+                        "background": "#131313",
+                        "outline-variant": "#5b403d",
+                        "error-container": "#93000a",
+                        "on-secondary": "#303030",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#ffdad6",
+                        "on-primary-container": "#fff2f0",
+                        "surface-container": "#202020",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-bright": "#393939",
+                        "surface": "#131313",
+                        "tertiary-container": "#6e7070",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary-container": "#b5b5b5",
+                        "secondary-container": "#474747",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "surface-variant": "#353535",
+                        "on-surface": "#e5e2e1",
+                        "inverse-on-surface": "#303030",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary-fixed-variant": "#930010",
+                        "inverse-primary": "#ba1a20",
+                        "error": "#ffb4ab",
+                        "secondary": "#c6c6c6",
+                        "on-background": "#e5e2e1",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-container-high": "#2a2a2a",
+                        "primary": "#ffb3ac",
+                        "on-tertiary-container": "#f4f4f4",
+                        "surface-container-low": "#1b1c1c",
+                        "on-primary-fixed": "#410003",
+                        "tertiary": "#c6c6c7",
+                        "outline": "#ab8985"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "column-count": "12",
+                        "margin-desktop": "48px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<header class="bg-surface-container top-0 sticky border-b border-outline-variant shadow-sm z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-[1120px] mx-auto h-[72px]">
+<div class="font-headline-md text-headline-md font-bold text-primary">
+                Hardik Traders
+            </div>
+<nav class="hidden md:flex gap-8 items-center font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Products</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center gap-2 text-primary font-label-bold px-4 py-2 rounded hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">call</span> Call Now
+                </button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-bold hover:bg-primary-container hover:text-on-primary-container transition-all active:scale-95">
+                    Get Quote
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Hero Title Section -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-l-4 border-primary-container pl-6 py-2">
+<div>
+<h1 class="font-display-lg text-display-lg mb-2 text-on-surface">Industrial Catalog</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Explore our comprehensive range of high-precision engineered solutions. Designed for extreme durability and operational excellence in heavy industrial environments.
+                    </p>
+</div>
+<div class="bg-surface-container-high p-2 rounded flex items-center gap-2 border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 font-body-md w-48 lg:w-64 text-on-surface placeholder-on-surface-variant" placeholder="Search categories..." type="text">
+</div>
+</div>
+</section>
+<!-- Category Masonry Grid -->
+<div class="masonry-grid">
+<!-- SKK Bearings (Hero Position) -->
+<div class="masonry-item-tall masonry-item-wide relative group overflow-hidden rounded-xl bg-surface-container-highest flex flex-col justify-end p-10 border border-outline-variant">
+<div class="absolute inset-0 z-0 opacity-40 group-hover:scale-105 transition-transform duration-700 bg-cover bg-center" data-alt="A professional close-up shot of heavy-duty SKK industrial bearings in a warehouse setting. The lighting is crisp and cool, highlighting the polished steel surfaces and engineering precision. The composition is cinematic with a focus on structural integrity and durability.">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10"></div>
+<div class="relative z-20">
+<div class="bg-primary-container text-on-primary-container font-label-bold px-3 py-1 rounded w-fit mb-4">PREMIUM RANGE</div>
+<h2 class="font-headline-xl text-headline-xl text-white mb-2">SKK Bearings</h2>
+<p class="text-tertiary-fixed font-body-md mb-8 max-w-lg">Our flagship line of SKK precision bearings, designed for maximum load capacity and high-temperature resistance.</p>
+<div class="flex items-center justify-between">
+<span class="text-tertiary-fixed-dim font-label-bold">150+ Products</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded font-label-bold flex items-center gap-2 hover:bg-primary-fixed-dim transition-colors">
+                            Explore <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Ball Bearings -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant flex flex-col p-6 hover:border-primary transition-all">
+<div class="h-32 mb-4 overflow-hidden rounded bg-surface-container-highest relative">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80" data-alt="Close-up photograph of high-grade steel ball bearings resting on a dark gray slate surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Ha61bvwd-jCMb0n2YdN8-pIHiOvWBrsEnnvUtUSAFpviN9GTVVS_EM0VaYNMtGElYh0sLoCBw-ntKqQVoWR3sc_KXnUbxGdpqc9ziXS6s6ahNgEtA2MUTzDP71hPNrRzUCDQ9QCTt0vzIrwnbzfmei72D7ta7bkrZr57XExqZz8PAcdGyczCg5dF-9bUpUCpc7X8H-1Hfa4aUFnFqao9IVpAxFXlNv_fI_Ubu0WTwFZNkwr-m0Cw5GMx3N0C9aPb3URpyEZ3YeYH">
+<div class="absolute top-2 right-2 bg-primary-container px-2 py-1 rounded text-[10px] text-on-primary-container font-bold">TOP SELLER</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Ball Bearings</h3>
+<p class="text-on-surface-variant font-body-sm mb-6">Versatile solutions for radial and axial loads.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-on-surface-variant font-label-sm">280+ SKUs</span>
+<a class="text-primary font-label-bold flex items-center gap-1 hover:underline" href="#">Explore <span class="material-symbols-outlined !text-[16px]">open_in_new</span></a>
+</div>
+</div>
+<!-- Roller Bearings -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant flex flex-col p-6 hover:border-primary transition-all">
+<div class="h-32 mb-4 overflow-hidden rounded bg-surface-container-highest">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80" data-alt="Detailed macro view of a cylindrical roller bearing, showing the precision rollers and brass cage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrtRSg8g5tGEMp9f-E5gvf1jecNSjfAVEcfj4z_eeUqQRY0Ubxm-LI3No_f87bntulQ5_WYm5lhY374QsuQQK9prARziY03EM5yPP0gzTNb0Y3xTiTcSQgFWMdOTL3f52az6TmxOedU17Ry5itKhFoKNnPa6nHxvVUBphCvx4jyMV95mOPPJ2cG3Xs4EcMAC_zk0nkgQcaBPNRkADBomC6iGYSJEOq0oYnPvz1JStHlORNz-Hh9GpfqciRpySFTKJ1Cn7qyDv6XBHj">
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Roller Bearings</h3>
+<p class="text-on-surface-variant font-body-sm mb-6">Heavy-load capacity for industrial machinery.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-on-surface-variant font-label-sm">195+ SKUs</span>
+<a class="text-primary font-label-bold flex items-center gap-1 hover:underline" href="#">Explore <span class="material-symbols-outlined !text-[16px]">open_in_new</span></a>
+</div>
+</div>
+<!-- Linear Bearings -->
+<div class="masonry-item-tall relative group overflow-hidden rounded-xl bg-surface-container-highest border border-outline-variant flex flex-col p-6 hover:border-primary transition-all">
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Linear Bearings</h3>
+<p class="text-on-surface-variant font-body-sm mb-4">Precision motion control for CNC and automation.</p>
+<div class="flex-grow mb-4 overflow-hidden rounded bg-surface-container-lowest relative">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80" data-alt="Industrial linear guide rails and slide blocks arranged in a geometric composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGa2KHLh4nxCboeV1VLlZC6n5S4O2absL0Yfcu4HMl46H0qR9RQyLyGgthnvsL60sCQM0PeyudLMwzoc_Cycsh-FHPLrEuZ6---i4QilWjd0-YT7G4m2pimGZUpCjxb0uJMVMt2-rmhWlBvSuzx2yXeSIZdUpxlaAv75lnhj9ZCADR9xQe196xpCAr0tIlkW5sA1hq9Hs0y1nmqIJXmsQfC2D7rHVCs1U6U0wCQvBqSBnXMZmXCEGZIxfJEtDxOduRHiJ2U-GBtj5U">
+</div>
+<div class="mt-auto flex flex-col gap-3">
+<div class="flex justify-between font-label-sm text-on-surface-variant">
+<span>Automation Grade</span>
+<span>85+ Types</span>
+</div>
+<button class="w-full border-2 border-primary text-primary py-2 rounded font-label-bold hover:bg-primary hover:text-on-primary transition-colors">View Catalog</button>
+</div>
+</div>
+<!-- Pillow Block Bearings -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant flex flex-col p-6 hover:border-primary transition-all">
+<div class="h-32 mb-4 overflow-hidden rounded bg-surface-container-highest">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80" data-alt="A heavy cast-iron pillow block bearing unit presented on a clean white laboratory table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAeOyeV21--wLNvG-VKO1gVrgT9fzedrTpHwoaq5wzQA_Ed4WGNSZ1kT3JskHeE9iRC2WqQpE-eAUAepFUxnpMxaCAmzlpsZyGbWW6fronUt759wSKUg1a7vzHuDRDbe3Dvs4GV_-0bugyp-F4CKx8Xp8VMXWzvnvLAyN6hLwm4WJV6WvmZnfc_cc1FZ9x9CSSii3hjqHjwXG8s_Ac5ya1D4T0TB59-X6FXF4Wzk3jv1QkYXuJ-xLDGKJ37Pv8r0hmAOPbLJUn2yJb">
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Pillow Block</h3>
+<p class="text-on-surface-variant font-body-sm mb-6">Mounted units for easy shaft support.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-on-surface-variant font-label-sm">110+ SKUs</span>
+<a class="text-primary font-label-bold flex items-center gap-1 hover:underline" href="#">Explore <span class="material-symbols-outlined !text-[16px]">open_in_new</span></a>
+</div>
+</div>
+<!-- Bearing Accessories -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant flex flex-col p-6 hover:border-primary transition-all">
+<div class="h-32 mb-4 overflow-hidden rounded bg-surface-container-highest">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80" data-alt="A collection of bearing accessories including lock nuts, washers, and sleeves." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwJnuRUWzW5wrIRKUQfT62UzitARjivGt1jdcauS-q03HLTYh1-1anfAyuvlJBKrfCE-DbKwYPpQBhdKwrAzA8wfbIjtoBb_s8d-H1jO8G3zqjFDaWcsJfOtpnL424kzIxu4YzIRleaI_u9UFp7zZWWC6E4qM01Fthe_9T4EggZMwvvyg3rgxzkoOubX4qJI41uaBKFOE3PnPL55ezHjRJ42DiMVipUh3IAZwBSyZz9SlXkZH3j11JNuuYP4GpY_tFOzM05K4nix3T">
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Accessories</h3>
+<p class="text-on-surface-variant font-body-sm mb-6">Seals, sleeves, and maintenance tools.</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-on-surface-variant font-label-sm">340+ SKUs</span>
+<a class="text-primary font-label-bold flex items-center gap-1 hover:underline" href="#">Explore <span class="material-symbols-outlined !text-[16px]">open_in_new</span></a>
+</div>
+</div>
+<!-- Industrial Components (Wide) -->
+<div class="masonry-item-wide relative group overflow-hidden rounded-xl bg-surface-container-highest border border-outline-variant flex items-center p-10 hover:shadow-xl transition-all">
+<div class="flex-1 pr-10">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Industrial Components</h3>
+<p class="text-on-surface-variant font-body-md mb-8">Complete set of gears, belts, and chain drives for integrated power transmission systems.</p>
+<button class="bg-primary text-on-primary px-8 py-2 rounded font-label-bold hover:bg-primary-container hover:text-on-primary-container transition-all">
+                        Request Full Catalog
+                    </button>
+</div>
+<div class="w-1/3 aspect-square rounded overflow-hidden border border-outline-variant">
+<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90" data-alt="An assortment of industrial gears and transmission components." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOZJmdviU98_yXCp_BzxMtMS7iQe_jzEIZx52yLmR1GPqtBAf3psF8p4kuan8eJUhtbjxgCAf0HmEeQJO2kC_XXbIKlliKm4dlvSUUpXvurhUX-QSHnFFCq28yqWCopGwunGRnf3XiGgCGN8CY3MtmIGSL1BlmlFfx57IBwQQ4-bU1uU2ImViiW33YDzFEbD60D5vIZrcp9wAJPIB114wR8ddfWyOw3TUKnx9BUXapXCIVWvuf3bhmM10sn77Ls9SotODYVCX4KWV-">
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<section class="mt-16 bg-primary-container rounded-xl p-12 text-center relative overflow-hidden border border-outline-variant">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+<h2 class="font-headline-xl text-headline-xl text-on-primary-container mb-4 relative z-10">Can't find a specific part?</h2>
+<p class="text-on-primary-container/80 font-body-lg mb-10 max-w-xl mx-auto relative z-10">
+                Our sourcing team can help you find rare and discontinued industrial components from our global network of partners.
+            </p>
+<div class="flex flex-wrap justify-center gap-6 relative z-10">
+<button class="bg-primary text-on-primary px-12 py-3 rounded font-label-bold hover:bg-primary-fixed-dim transition-all">
+                    Custom Inquiry
+                </button>
+<button class="border border-on-primary-container text-on-primary-container px-12 py-3 rounded font-label-bold hover:bg-on-primary-container hover:text-primary-container transition-all">
+                    Speak to Expert
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest text-on-surface mt-16 border-t border-outline-variant">
+<div class="w-full py-12 px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-8 max-w-[1120px] mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-6">
+                    Hardik Traders
+                </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+                    Leading distributors of precision industrial bearings and motion control components since 1998.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">share</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">mail</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">location_on</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface mb-6">Products</h4>
+<ul class="flex flex-col gap-2 font-body-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Ball Bearings</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Roller Bearings</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Linear Guides</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Industrial Seals</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface mb-6">Company</h4>
+<ul class="flex flex-col gap-2 font-body-sm">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Certifications</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Quality Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface mb-6">Newsletter</h4>
+<p class="font-body-sm mb-4 text-on-surface-variant">Get monthly updates on new inventory and industry insights.</p>
+<div class="flex flex-col gap-2">
+<input class="bg-surface-container-high border-outline-variant text-on-surface font-body-sm rounded p-2 focus:ring-1 focus:ring-primary" placeholder="Email address" type="email">
+<button class="bg-primary text-on-primary font-label-bold py-2 rounded hover:bg-primary-container transition-all">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant py-8 px-margin-desktop max-w-[1120px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">© 2024 Hardik Traders. All rights reserved. Industrial bearing solutions with engineered precision.</p>
+<div class="flex gap-8 font-body-sm text-body-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Micro-interaction for hover effects on masonry items
+        document.querySelectorAll('.masonry-item, [class*="masonry-item"]').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-4px)';
+                item.style.transition = 'transform 0.3s cubic-bezier(0.2, 0, 0, 1)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

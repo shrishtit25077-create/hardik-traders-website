@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hardik Traders | Industrial Bearing Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for industrial feel */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #353535; border: 2px solid #131313; }
+        ::-webkit-scrollbar-thumb:hover { background: #ffb3ac; }
+        
+        .industrial-grid-pattern {
+            background-image: radial-gradient(circle, #353535 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-primary-fixed-variant": "#930010",
+                      "on-background": "#e5e2e1",
+                      "surface-container-low": "#1b1c1c",
+                      "on-surface": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-error": "#690005",
+                      "inverse-surface": "#e5e2e1",
+                      "secondary": "#c6c6c6",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-secondary-fixed": "#1b1b1b",
+                      "primary": "#ffb3ac",
+                      "surface": "#131313",
+                      "secondary-fixed-dim": "#c6c6c6",
+                      "on-secondary-container": "#b5b5b5",
+                      "surface-dim": "#131313",
+                      "outline-variant": "#5b403d",
+                      "error-container": "#93000a",
+                      "on-surface-variant": "#e4beba",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-primary": "#680008",
+                      "outline": "#ab8985",
+                      "surface-container-lowest": "#0e0e0e",
+                      "surface-container": "#202020",
+                      "secondary-fixed": "#e2e2e2",
+                      "on-primary-fixed": "#410003",
+                      "surface-tint": "#ffb3ac",
+                      "background": "#131313",
+                      "surface-container-highest": "#353535",
+                      "on-tertiary-container": "#f4f4f4",
+                      "error": "#ffb4ab",
+                      "on-tertiary": "#2f3131",
+                      "surface-bright": "#393939",
+                      "tertiary": "#c6c6c7",
+                      "on-primary-container": "#fff2f0",
+                      "on-secondary": "#303030",
+                      "secondary-container": "#474747",
+                      "on-error-container": "#ffdad6",
+                      "surface-variant": "#353535",
+                      "primary-fixed": "#ffdad6",
+                      "surface-container-high": "#2a2a2a",
+                      "on-secondary-fixed-variant": "#474747",
+                      "inverse-primary": "#ba1a20",
+                      "primary-container": "#d32f2f",
+                      "primary-fixed-dim": "#ffb3ac",
+                      "tertiary-container": "#6e7070",
+                      "inverse-on-surface": "#303030"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0px",
+                      "lg": "0px",
+                      "xl": "0px",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "base": "8px",
+                      "column-count": "12",
+                      "margin-desktop": "48px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-bold": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-lg-mobile": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background industrial-grid-pattern min-h-screen font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container-lowest border-b border-outline-variant dark:border-outline shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-[1120px] mx-auto h-[72px]">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tighter uppercase">Hardik Traders</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">About</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-body-md text-body-md" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center gap-2 px-6 py-2 bg-transparent border-2 border-primary text-primary font-label-bold text-label-bold uppercase hover:bg-primary hover:text-on-primary transition-all duration-200">
+                    Call Now
+                </button>
+<button class="flex items-center gap-2 px-6 py-2 bg-primary-container text-on-primary-container font-label-bold text-label-bold uppercase shadow-md active:scale-95 transition-transform">
+                    Get Quote
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-[1120px] mx-auto px-margin-mobile md:px-margin-desktop py-16">
+<!-- Hero Section for Products Hub -->
+<section class="mb-16 border-l-8 border-primary-container pl-6 md:pl-8">
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-4 uppercase tracking-tighter">Product Categories</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Engineered precision for heavy industry. Explore our comprehensive inventory of high-performance mechanical components from world-leading manufacturers.
+            </p>
+</section>
+<!-- Product Categories Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Category Card: Ball Bearings -->
+<div class="group bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img alt="Precision Ball Bearings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" data-alt="A close-up photograph of high-precision steel ball bearings arranged in a structured grid. The lighting is clinical and industrial, highlighting the metallic sheen and oiled surfaces of the bearings. The color palette is dominated by cold steel greys and deep blacks with sharp highlights. This image reflects a high-tech manufacturing aesthetic with extreme focus on structural detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALs4DZKQp9BkyiC3IkKGD_SNUqw55dgLZE2DlwNqURGWdjm5ESXZWeCCsxUOVqekP2glCZ-yQgeJQ_ewo6xl9JPV50LvyhklsGxyjupeOzVIh3QFkTSKjVT-p_JroX8nZ-h8MZHzp-lD-8FwznBLE0-90ZYKHoYZq5VTCVD80taHqtfVvknKTKXr80octzl8Ja3kzlhhO3hYzd4weyYoF9XNzbHEgfoITbr9F80KEoeGQNSlYn8naj4zv6EYoxccARdFQcT8HalxRd"/>
+<div class="absolute top-0 left-0 bg-primary-container px-3 py-1 font-label-sm text-label-sm text-on-primary-container uppercase">Top Category</div>
+</div>
+<div class="p-6 flex-grow flex flex-col border-t-4 border-primary">
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Ball Bearings</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">SKF</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">NSK</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">FAG</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">NTN</span>
+</div>
+<button class="mt-auto w-full py-3 bg-black border-2 border-outline-variant group-hover:border-primary group-hover:bg-primary group-hover:text-on-primary text-primary font-label-bold text-label-bold uppercase flex items-center justify-center gap-2 transition-all">
+                        Explore <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Category Card: Roller Bearings -->
+<div class="group bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img alt="Heavy Duty Roller Bearings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" data-alt="A heavy-duty industrial tapered roller bearing assembly resting on a metallic workbench. The lighting is dramatic and moody, casting strong shadows to emphasize the solid construction and engineering precision. The metallic textures are crisp, presented in a dark, professional environment with subtle red ambient reflections from nearby machinery. The composition is tight and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAchaD9nrvI3LaBMChQ32OBwxo2JusCcgPHrD03f9HHaz0HVcSsbtG0piKJmQ60MFLo7tLGChd0gKV_Ss8WHm1sZSgp2QExEf8jQNqlv_lB_HlP41MewCA1CrUobD120WaVdMzmOI0lNWa8XCsk7xZRGIGmzU2UKOGgWggsuIKOHbEpXol1mipWeeojniWUPGH9JKdQlxC5TabisjoP9GMwN1yWyGVGryvtZaH5t_ZYkM5HJFWZpFTrzdiIhNMH_XmvVNta0WXwxnFg"/>
+</div>
+<div class="p-6 flex-grow flex flex-col border-t-4 border-outline-variant group-hover:border-primary">
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Roller Bearings</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Timken</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">INA</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">KOYO</span>
+</div>
+<button class="mt-auto w-full py-3 bg-black border-2 border-outline-variant group-hover:border-primary group-hover:bg-primary group-hover:text-on-primary text-primary font-label-bold text-label-bold uppercase flex items-center justify-center gap-2 transition-all">
+                        Explore <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Category Card: Linear Motion -->
+<div class="group bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img alt="Linear Motion Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" data-alt="A macro shot of a linear motion rail and carriage system integrated into an automated factory line. The focus is razor-sharp on the steel rail's surface, showing technical excellence. The color palette features high-contrast black backgrounds with bright white light reflecting off the chrome rails. Red indicator lights in the background provide a subtle, high-energy industrial accent." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNaSh57aC_k3pg78SB1wiOyNif-w3dkPySBGFU-tnlBozxWfpRzgd1ANVDDhzE4mLphSyMqI1F9i-dRt65Z9u-mgzpAbAftwyPiSjf5i6YkUO0StuWMT-Y22P6DsfR39aAZsoaKzfSktD-PTfG-CU4WRXrFa8W-C6KEcwKZ4Pezw54IOGue2kKLZZyAX7fh8qTe25g4dY0RvhKX005zgBE2q6NjEYztL9Nj5-o9WL9ZFodJz0NT3OyGdgoT4Um-sFRBv0O5RwMBPKN"/>
+</div>
+<div class="p-6 flex-grow flex flex-col border-t-4 border-outline-variant group-hover:border-primary">
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Linear Motion</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">THK</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">HIWIN</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Rexroth</span>
+</div>
+<button class="mt-auto w-full py-3 bg-black border-2 border-outline-variant group-hover:border-primary group-hover:bg-primary group-hover:text-on-primary text-primary font-label-bold text-label-bold uppercase flex items-center justify-center gap-2 transition-all">
+                        Explore <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Category Card: Pneumatics -->
+<div class="group bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img alt="Pneumatic Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" data-alt="Technical assembly of pneumatic air valves and manifold blocks. The components are clean, precisely machined aluminum and black polymers with vibrant red tubing connected to them. The lighting is diffused and professional, emphasizing the complex engineering and modular design. The background is a dark, neutral grey, making the technical details pop with industrial authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdFNNqGKLLng9Crr7yXipOJNVvJC0cKkiww6S5xY5fRM1WJ5NhcAK_wNI-FOFQzB_n4F79L-WcxILrIuwdmAqVfj9MwtAOFkposzHRV2OsHkvUEj3a_HymY4cDtDo4-XmF4JfkpnfwZEO6z94J3tZenx4EOUwM-edtNS2JJ1TQ9Crz6TmEwkZTvrVgRcyNbG_zDnMpIdC8x5_FdYjgn01VdrLUZvp6Wnd7eli-zKfvehtZmstKwu3ujcTu5Wu_NtCVM8cJIfyu0BYZ"/>
+</div>
+<div class="p-6 flex-grow flex flex-col border-t-4 border-outline-variant group-hover:border-primary">
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Pneumatics</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">SMC</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Festo</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Janatics</span>
+</div>
+<button class="mt-auto w-full py-3 bg-black border-2 border-outline-variant group-hover:border-primary group-hover:bg-primary group-hover:text-on-primary text-primary font-label-bold text-label-bold uppercase flex items-center justify-center gap-2 transition-all">
+                        Explore <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Category Card: Hydraulics -->
+<div class="group bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img alt="Hydraulic Power" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" data-alt="Heavy hydraulic cylinder and piston assembly in an industrial setting. The focus is on the polished chrome surface of the rod and the robust bolted casing. Dark shadows and high-key metallic highlights create a sense of immense power and structural strength. The overall aesthetic is gritty yet meticulously clean, utilizing a palette of deep blacks and cold steel tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHgMVBOlecPHLleX954K1uIqzBRs9Vm-h5DHbh3l1g8xwqJh9tl6Y-EAv8Wg46_fHTB07yXHqasi-5EuRSeQUdHoikIEC5M9TML0Rcput6R5ilenF_WOoNcesWZN00H-oiavZotipzjgbqixvUkZo2-Flh7-UjokcUm_X9sUknO9JgOCds7Enbe74hMyVTqd2m-hXdf-GoT73wtPbab1VmtWifsTJaeCiwicYb8TtmdIvcHXQrga0mZ4_fi3nkWtLqOdxy_RCQyEYc"/>
+</div>
+<div class="p-6 flex-grow flex flex-col border-t-4 border-outline-variant group-hover:border-primary">
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Hydraulics</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Eaton</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Parker</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Vickers</span>
+</div>
+<button class="mt-auto w-full py-3 bg-black border-2 border-outline-variant group-hover:border-primary group-hover:bg-primary group-hover:text-on-primary text-primary font-label-bold text-label-bold uppercase flex items-center justify-center gap-2 transition-all">
+                        Explore <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Category Card: Electricals -->
+<div class="group bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 flex flex-col">
+<div class="relative h-56 overflow-hidden">
+<img alt="Industrial Electrical Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" data-alt="An industrial control panel featuring neatly organized circuit breakers, wires, and electronic modules. The composition emphasizes technical precision and grid-like structure. The lighting is bright and even, highlighting the vibrant colors of individual wires against the clean, light-grey panel background. The aesthetic is modern, high-density, and suggests complex systems management in a pristine laboratory environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIc3Y0hCy8UvIGni8Hi2kW20Kb5YjsB3VcgWSGF8VuaZf32WJVtgz2Q5FUU34e1ZCyO8NitO0_w0Iuw9_eMfrZeJ23DICo-6VJ6GxdUJmAVTH_cCUmJ49ywGMkLcgNve2Qm-7qpsdaLoERxKSuOYbmj49zqmggKWEtUdLuddGy2MkfL8PxDa7qy9OqQ5jE_dN2vxBk6oNiuu7wJqG_PGlCA-ovMh2ikNOyUZWSySGwQ3TT8FzcLptGK9kFEiGW0uMVwy1G-HTg1DDT"/>
+</div>
+<div class="p-6 flex-grow flex flex-col border-t-4 border-outline-variant group-hover:border-primary">
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Electricals</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">ABB</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Siemens</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Schneider</span>
+</div>
+<button class="mt-auto w-full py-3 bg-black border-2 border-outline-variant group-hover:border-primary group-hover:bg-primary group-hover:text-on-primary text-primary font-label-bold text-label-bold uppercase flex items-center justify-center gap-2 transition-all">
+                        Explore <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Category Card: Lubricants -->
+<div class="group bg-surface-container border-2 border-outline-variant hover:border-primary transition-all duration-300 flex flex-col lg:col-span-1">
+<div class="relative h-56 overflow-hidden">
+<img alt="Industrial Lubricants" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0" data-alt="Golden industrial oil being applied to a mechanical gear system. The slow-shutter effect captures the viscous flow and amber clarity of the lubricant against the cold, dark steel of the gears. The lighting is cinematic, creating high-contrast sparkles on the oil's surface. This imagery evokes a sense of smooth operation, heat management, and precision maintenance in heavy industry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5JrRcekTA2LkJFmcfJnr0kakLiGvdfLayMB8z1ooKpgkL0dz0fbX3I88hlwFcGwwg8W12xbzFxpCdnV09crNkoslF2shMVCMUxnF2FBrSVIojSeDndPDdAZ6Huamplc2Vi7FFJMvUBPBEjHBDaAL3_ovYNfkPHJNvY8-7c6oz1Ejs0FURwHNXIIlJ720OEPH5K_GIQ_IRlQiYBaAf2UznXzISWOIr5nlMvEtCfi4e2gvNp4ZmSXhf3H-Mp3YAZs1GezmaQyn1bHMW"/>
+</div>
+<div class="p-6 flex-grow flex flex-col border-t-4 border-outline-variant group-hover:border-primary">
+<h3 class="font-headline-md text-headline-md uppercase mb-2">Lubricants</h3>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Mobil</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Shell</span>
+<span class="px-2 py-0.5 border border-outline font-label-sm text-label-sm text-secondary-fixed uppercase">Castrol</span>
+</div>
+<button class="mt-auto w-full py-3 bg-black border-2 border-outline-variant group-hover:border-primary group-hover:bg-primary group-hover:text-on-primary text-primary font-label-bold text-label-bold uppercase flex items-center justify-center gap-2 transition-all">
+                        Explore <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Call to Action Card -->
+<div class="lg:col-span-2 bg-primary-container p-8 flex flex-col md:flex-row items-center justify-between gap-8 border-2 border-primary shadow-2xl relative overflow-hidden group">
+<!-- Abstract Pattern background -->
+<div class="absolute inset-0 opacity-10 pointer-events-none industrial-grid-pattern"></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-on-primary-container uppercase mb-2">Custom Engineering Solutions</h2>
+<p class="font-body-md text-body-md text-on-primary-container opacity-90 max-w-lg">
+                        Can't find a specific part? Our technical team specializes in sourcing obsolete components and designing bespoke industrial systems.
+                    </p>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="px-8 py-4 bg-white text-on-primary-fixed-variant font-label-bold text-label-bold uppercase hover:bg-black hover:text-white transition-colors">
+                        Request Specialist
+                    </button>
+<button class="px-8 py-4 border-2 border-white text-white font-label-bold text-label-bold uppercase hover:bg-white hover:text-primary-container transition-colors">
+                        Download Catalog
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-surface-container-lowest text-on-primary dark:text-on-surface">
+<div class="w-full py-xl px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-[1120px] mx-auto border-t-8 border-primary-container">
+<div class="space-y-6">
+<div class="font-headline-md text-headline-md font-bold text-on-primary dark:text-primary uppercase tracking-tighter">Hardik Traders</div>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim dark:text-on-surface-variant max-w-[280px]">
+                    © 2024 Hardik Traders. All rights reserved. Industrial bearing solutions with engineered precision.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-white">language</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-white">location_on</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-white">mail</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase mb-6 text-on-primary dark:text-primary">Bearing Products</h4>
+<ul class="space-y-3">
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Ball Bearings</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Roller Bearings</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Linear Guides</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase mb-6 text-on-primary dark:text-primary">Industrial Spares</h4>
+<ul class="space-y-3">
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Industrial Seals</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Electrical Gears</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Hydraulic Kits</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold uppercase mb-6 text-on-primary dark:text-primary">Company</h4>
+<ul class="space-y-3">
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Privacy Policy</a></li>
+<li><a class="text-primary-fixed-dim dark:text-on-surface-variant hover:text-on-primary dark:hover:text-primary transition-colors font-body-sm text-body-sm" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary dark:text-primary font-semibold underline font-body-sm text-body-sm" href="#">Request Catalog</a></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary-container dark:bg-surface-container-high py-4">
+<div class="max-w-[1120px] mx-auto px-margin-desktop text-center">
+<span class="font-label-sm text-label-sm text-on-primary-container opacity-60">INDUSTRIAL SOLUTIONS HUB v4.02 // BUILT FOR RIGOROUS ENVIRONMENTS</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+    </script>
+</body></html>

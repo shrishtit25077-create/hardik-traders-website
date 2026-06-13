@@ -1,0 +1,381 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Inquiry - Hardik Traders | Industrial Bearing Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary": "#680008",
+                "tertiary-fixed-dim": "#c6c6c7",
+                "primary-fixed-dim": "#ffb3ac",
+                "on-tertiary": "#2f3131",
+                "tertiary-fixed": "#e2e2e2",
+                "primary-container": "#d32f2f",
+                "on-secondary-fixed-variant": "#474747",
+                "surface-tint": "#ffb3ac",
+                "on-surface-variant": "#e4beba",
+                "surface-container-highest": "#353535",
+                "background": "#131313",
+                "outline-variant": "#5b403d",
+                "error-container": "#93000a",
+                "on-secondary": "#303030",
+                "on-error-container": "#ffdad6",
+                "primary-fixed": "#ffdad6",
+                "on-primary-container": "#fff2f0",
+                "surface-container": "#202020",
+                "inverse-surface": "#e5e2e1",
+                "surface-bright": "#393939",
+                "surface": "#131313",
+                "tertiary-container": "#6e7070",
+                "secondary-fixed-dim": "#c6c6c6",
+                "on-secondary-container": "#b5b5b5",
+                "secondary-container": "#474747",
+                "on-tertiary-fixed": "#1a1c1c",
+                "on-secondary-fixed": "#1b1b1b",
+                "surface-variant": "#353535",
+                "on-surface": "#e5e2e1",
+                "inverse-on-surface": "#303030",
+                "surface-container-lowest": "#0e0e0e",
+                "surface-dim": "#131313",
+                "secondary-fixed": "#e2e2e2",
+                "on-primary-fixed-variant": "#930010",
+                "inverse-primary": "#ba1a20",
+                "error": "#ffb4ab",
+                "secondary": "#c6c6c6",
+                "on-background": "#e5e2e1",
+                "on-error": "#690005",
+                "on-tertiary-fixed-variant": "#454747",
+                "surface-container-high": "#2a2a2a",
+                "primary": "#ffb3ac",
+                "on-tertiary-container": "#f4f4f4",
+                "surface-container-low": "#1b1c1c",
+                "on-primary-fixed": "#410003",
+                "tertiary": "#c6c6c7",
+                "outline": "#ab8985"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "column-count": "12",
+                "margin-desktop": "48px",
+                "base": "8px",
+                "lg": "32px",
+                "md": "24px",
+                "sm": "16px",
+                "xl": "48px",
+                "xxl": "64px",
+                "xs": "8px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Inter"],
+                "headline-xl": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "body-md": ["Inter"],
+                "label-sm": ["Inter"],
+                "label-bold": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "title-lg": ["Inter"],
+                "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        .success-overlay { display: none; }
+        .inquiry-grid { display: grid; grid-template-columns: 1fr 400px; gap: 48px; }
+        @media (max-width: 1024px) { .inquiry-grid { grid-template-columns: 1fr; } }
+        .industrial-accent-bar { width: 4px; height: 100%; background-color: #d32f2f; position: absolute; left: 0; top: 0; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-surface-container border-b border-outline-variant shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-[1120px] mx-auto h-[72px]">
+<div class="flex items-center gap-base">
+<span class="font-headline-md text-headline-md font-bold text-primary">Hardik Traders</span>
+</div>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Products</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="md:hidden p-base text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<button class="hidden lg:flex items-center gap-xs font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors px-sm py-xs rounded">
+<span class="material-symbols-outlined">phone</span>
+                    Call Now
+                </button>
+<button class="bg-primary-container text-on-primary-container px-lg py-xs rounded font-label-bold text-label-bold uppercase tracking-wider hover:bg-primary transition-all active:scale-95">
+                    Get Quote
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-[1120px] mx-auto px-margin-desktop py-xl relative">
+<!-- Success State Indicator (Hidden by default) -->
+<div class="success-overlay fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm flex items-center justify-center p-md" id="success-state">
+<div class="bg-surface-container border border-outline-variant p-xl rounded-xl shadow-2xl max-w-md w-full text-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-lg">
+<span class="material-symbols-outlined text-[48px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm">Quotation Submitted</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl">Thank you for your interest. Our technical procurement team will review your inquiry and respond within 24 business hours.</p>
+<button class="w-full bg-primary-container text-on-primary-container py-md rounded font-label-bold text-label-bold uppercase" onclick="toggleSuccess(false)">Return to Dashboard</button>
+</div>
+</div>
+<div class="mb-xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-xs">Request Industrial Quote</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Connect with our engineering specialists for high-precision bearing solutions tailored to your industrial requirements.</p>
+</div>
+<div class="inquiry-grid">
+<!-- Form Section -->
+<section>
+<div class="bg-surface-container-low p-xl rounded-lg border border-outline-variant shadow-sm relative overflow-hidden">
+<div class="industrial-accent-bar"></div>
+<form class="space-y-lg" id="inquiry-form" onsubmit="handleFormSubmit(event)">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Name -->
+<div class="flex flex-col gap-base">
+<label class="font-label-bold text-label-sm text-on-surface-variant" for="full_name">FULL NAME *</label>
+<input class="h-11 px-sm border border-outline focus:border-primary focus:ring-2 focus:ring-primary-container bg-surface-container-highest text-on-surface rounded transition-all" id="full_name" placeholder="Enter your name" required="" type="text">
+</div>
+<!-- Company -->
+<div class="flex flex-col gap-base">
+<label class="font-label-bold text-label-sm text-on-surface-variant" for="company_name">COMPANY NAME *</label>
+<input class="h-11 px-sm border border-outline focus:border-primary focus:ring-2 focus:ring-primary-container bg-surface-container-highest text-on-surface rounded transition-all" id="company_name" placeholder="Industrial entity name" required="" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Email -->
+<div class="flex flex-col gap-base">
+<label class="font-label-bold text-label-sm text-on-surface-variant" for="email_address">WORK EMAIL *</label>
+<input class="h-11 px-sm border border-outline focus:border-primary focus:ring-2 focus:ring-primary-container bg-surface-container-highest text-on-surface rounded transition-all" id="email_address" placeholder="name@company.com" required="" type="email">
+</div>
+<!-- Phone -->
+<div class="flex flex-col gap-base">
+<label class="font-label-bold text-label-sm text-on-surface-variant" for="phone_number">PHONE NUMBER *</label>
+<input class="h-11 px-sm border border-outline focus:border-primary focus:ring-2 focus:ring-primary-container bg-surface-container-highest text-on-surface rounded transition-all" id="phone_number" placeholder="+91 00000 00000" required="" type="tel">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Product Selection -->
+<div class="flex flex-col gap-base">
+<label class="font-label-bold text-label-sm text-on-surface-variant" for="product_required">PRODUCT REQUIRED *</label>
+<div class="relative">
+<select class="w-full h-11 px-sm border border-outline focus:border-primary focus:ring-2 focus:ring-primary-container bg-surface-container-highest text-on-surface rounded appearance-none transition-all" id="product_required" required="">
+<option value="">Select Category</option>
+<option value="ball_bearings">Deep Groove Ball Bearings</option>
+<option value="roller_bearings">Spherical Roller Bearings</option>
+<option value="linear_guides">Precision Linear Guides</option>
+<option value="tapered_roller">Tapered Roller Bearings</option>
+<option value="seals">Industrial Sealing Solutions</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<!-- Quantity -->
+<div class="flex flex-col gap-base">
+<label class="font-label-bold text-label-sm text-on-surface-variant" for="quantity">ORDER QUANTITY *</label>
+<input class="h-11 px-sm border border-outline focus:border-primary focus:ring-2 focus:ring-primary-container bg-surface-container-highest text-on-surface rounded transition-all" id="quantity" min="1" placeholder="Minimum 50 units" required="" type="number">
+</div>
+</div>
+<!-- File Upload -->
+<div class="flex flex-col gap-base">
+<label class="font-label-bold text-label-sm text-on-surface-variant uppercase">TECHNICAL SPECIFICATIONS / BLUEPRINTS</label>
+<div class="border-2 border-dashed border-outline rounded-lg p-lg flex flex-col items-center justify-center bg-surface-container-highest hover:bg-surface-container transition-colors cursor-pointer group" id="dropzone">
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-[32px] mb-xs">upload_file</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Drag and drop or <span class="text-primary font-semibold">browse files</span></p>
+<p class="text-[10px] text-outline mt-xs uppercase tracking-widest">PDF, DXF, OR STEP FILES (MAX 10MB)</p>
+<input class="hidden" id="file_attachment" type="file">
+</div>
+</div>
+<!-- Message -->
+<div class="flex flex-col gap-base">
+<label class="font-label-bold text-label-sm text-on-surface-variant" for="message">ADDITIONAL REQUIREMENTS / NOTES</label>
+<textarea class="p-sm border border-outline focus:border-primary focus:ring-2 focus:ring-primary-container bg-surface-container-highest text-on-surface rounded transition-all" id="message" placeholder="Detail any specific tolerances, temperature ratings, or lubrication requirements..." rows="4"></textarea>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary-container py-md rounded font-headline-md text-headline-md font-bold shadow-lg transition-all active:scale-95 flex items-center justify-center gap-sm" type="submit">
+                            Submit Quotation Request
+                            <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+</section>
+<!-- Sidebar Info -->
+<aside class="space-y-lg">
+<div class="bg-surface-container-high p-lg rounded border border-outline-variant">
+<h3 class="font-title-lg text-title-lg text-primary mb-md flex items-center gap-xs">
+<span class="material-symbols-outlined">verified</span>
+                        Quality Assurance
+                    </h3>
+<ul class="space-y-sm">
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-body-md mt-1">check</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ISO 9001:2015 Certified manufacturing processes.</p>
+</li>
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-body-md mt-1">check</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">100% genuine products with manufacturer warranty.</p>
+</li>
+<li class="flex items-start gap-xs">
+<span class="material-symbols-outlined text-primary text-body-md mt-1">check</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Technical support for custom industrial applications.</p>
+</li>
+</ul>
+</div>
+<div class="relative h-[280px] rounded overflow-hidden shadow-sm group">
+<img alt="Industrial Bearing Close-up" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A macro close-up of a high-precision industrial roller bearing assembly featuring polished steel rollers and a brass cage. The lighting is cold, blue-toned, and technical, emphasizing the metallic textures and engineered precision of the component. The background is a clean, minimalist laboratory or workshop setting with soft bokeh highlights. The overall mood is professional, reliable, and represents cutting-edge industrial technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlx5sI-EUyBke64tMuHAH3pNJhzd5-WCetRWIMiWbGRdpOrXnjpGlJvJbfY4jFZhLE0dUK1MmEM3eZxNCs0p12meB6hBgXKRRTrgh4RlX4PBROCUCyRFET28kGkYD2NdXAo51cNPA29WnVzt8FNcu6gWXAsTq16NQKAc8p42pzU1xsn9oB1geu7BUlLuUHK-MnGcGuEB3nQYDHt8XHaspvWXUaocacfh1sdpzcsM3oEmZje2hf62xPbGAqL381ntJhL_z7kBy4Ac5l">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 to-transparent flex flex-col justify-end p-lg">
+<p class="text-on-surface font-title-lg text-title-lg mb-xs">Engineered for Reliability</p>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Serving global industrial partners with precision components for over 25 years.</p>
+</div>
+</div>
+<div class="p-lg bg-surface-container border border-outline-variant rounded">
+<p class="font-label-bold text-label-sm text-on-surface-variant mb-sm uppercase">Quick Support</p>
+<div class="flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="font-label-bold text-label-sm text-on-surface-variant uppercase">EMAIL</p>
+<p class="font-body-md text-body-md text-primary">sales@hardiktraders.com</p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="font-label-bold text-label-sm text-on-surface-variant uppercase">DIRECT LINE</p>
+<p class="font-body-md text-body-md text-primary">+91 (22) 2345 6789</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest text-on-surface mt-xxl border-t border-outline-variant">
+<div class="w-full py-xl px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-[1120px] mx-auto">
+<div class="col-span-1 md:col-span-1">
+<span class="font-headline-md text-headline-md font-bold text-primary">Hardik Traders</span>
+<p class="mt-md font-body-sm text-body-sm text-on-surface-variant">Dedicated to delivering high-performance bearing solutions for global industrial infrastructures.</p>
+</div>
+<div>
+<p class="font-label-bold text-label-sm text-primary uppercase mb-md">Products</p>
+<ul class="space-y-sm">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Ball Bearings</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Roller Bearings</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Linear Guides</a></li>
+</ul>
+</div>
+<div>
+<p class="font-label-bold text-label-sm text-primary uppercase mb-md">Quick Links</p>
+<ul class="space-y-sm">
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Industrial Seals</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<p class="font-label-bold text-label-sm text-primary uppercase mb-md">Locations</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Corporate HQ: Mumbai, India</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-xs">Warehouse: Ahmedabad, India</p>
+</div>
+</div>
+<div class="max-w-[1120px] mx-auto px-margin-desktop py-lg border-t border-outline-variant">
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">© 2024 Hardik Traders. All rights reserved. Industrial bearing solutions with engineered precision.</p>
+</div>
+</footer>
+<script>
+        function toggleSuccess(show) {
+            const overlay = document.getElementById('success-state');
+            if (show) {
+                overlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const btn = event.submitter;
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Processing...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                toggleSuccess(true);
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+                event.target.reset();
+            }, 1500);
+        }
+
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('file_attachment');
+
+        dropzone.addEventListener('click', () => fileInput.click());
+        
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('bg-primary/20');
+        });
+
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('bg-primary/20');
+        });
+
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('bg-primary/20');
+            if (e.dataTransfer.files.length) {
+                const fileName = e.dataTransfer.files[0].name;
+                dropzone.innerHTML = `<span class="material-symbols-outlined text-primary text-[32px] mb-xs">check_circle</span><p class="text-primary font-bold">${fileName}</p>`;
+            }
+        });
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length) {
+                const fileName = fileInput.files[0].name;
+                dropzone.innerHTML = `<span class="material-symbols-outlined text-primary text-[32px] mb-xs">check_circle</span><p class="text-primary font-bold">${fileName}</p>`;
+            }
+        });
+    </script>
+</body></html>

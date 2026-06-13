@@ -1,32 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import Navbar        from './components/Navbar';
-import Hero          from './components/Hero';
-import Stats         from './components/Stats';
-import About         from './components/About';
-import Products      from './components/Products';
-import TrustSection  from './components/TrustSection';
-import Industries    from './components/Industries';
-import Brands        from './components/Brands';
-import Testimonials  from './components/Testimonials';
-import Contact       from './components/Contact';
-import Footer        from './components/Footer';
-import QuickContact  from './components/QuickContact';
-import AdminLogin    from './components/Admin/AdminLogin';
+import React, { useState } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
+// Admin Components
+import AdminLogin from './components/Admin/AdminLogin';
 import AdminDashboard from './components/Admin/AdminDashboard';
 
-// Simple hash-based routing for admin panel (no React Router needed)
-const isAdminPath = () => window.location.pathname === '/admin';
+// Pages
+import Home from './pages/Home';
+import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
+import ProductCategories from './pages/ProductCategories';
+import DynamicCategory from './pages/DynamicCategory';
+import Catalog from './pages/Catalog';
+import GetQuote from './pages/GetQuote';
+import ContactUs from './pages/ContactUs';
+import FloatingContact from './components/layout/FloatingContact';
 
 function App() {
-  const [page, setPage]        = useState(isAdminPath() ? 'admin' : 'home');
-  const [authed, setAuthed]    = useState(!!localStorage.getItem('ht_token'));
-
-  // Keep URL in sync
-  useEffect(() => {
-    const handler = () => setPage(isAdminPath() ? 'admin' : 'home');
-    window.addEventListener('popstate', handler);
-    return () => window.removeEventListener('popstate', handler);
-  }, []);
+  const [authed, setAuthed] = useState(!!localStorage.getItem('ht_token'));
 
   const handleLogin = () => setAuthed(true);
   const handleLogout = () => {
@@ -35,30 +26,43 @@ function App() {
     setAuthed(false);
   };
 
-  // ─── Admin route ────────────────────────────────────────────────────────
-  if (page === 'admin') {
-    if (!authed) return <AdminLogin onLogin={handleLogin} />;
-    return <AdminDashboard onLogout={handleLogout} />;
-  }
-
-  // ─── Public site ────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg)' }}>
-      <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <About />
-        <Products />
-        <TrustSection />
-        <Industries />
-        <Brands />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-      <QuickContact />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<Navigate to="/" replace />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/categories" element={<ProductCategories />} />
+
+        {/* Dynamic Category Route */}
+        <Route path="/products/category/:slug" element={<DynamicCategory />} />
+
+        {/* Redirect old category routes to the new dynamic format or home if obsolete */}
+        <Route path="/products/ball-bearings" element={<Navigate to="/products/category/bearings" replace />} />
+        <Route path="/products/roller-bearings" element={<Navigate to="/products/category/bearings" replace />} />
+        <Route path="/products/linear-bearings" element={<Navigate to="/products/category/bearings" replace />} />
+        <Route path="/products/pneumatics" element={<Navigate to="/products/category/pneumatics" replace />} />
+        <Route path="/products/automation" element={<Navigate to="/products/category/sensors-automation" replace />} />
+        <Route path="/products/measuring-instruments" element={<Navigate to="/products/category/measuring-instruments" replace />} />
+        <Route path="/products/hydraulics" element={<Navigate to="/products/category/hydraulics" replace />} />
+        <Route path="/products/electricals" element={<Navigate to="/products/category/electricals-electronics" replace />} />
+        <Route path="/products/lubricants" element={<Navigate to="/products/category/lubricants-greases" replace />} />
+        <Route path="/products/industrial-seals" element={<Navigate to="/products/category/bearings" replace />} />
+
+        <Route path="/product-detail/:sku" element={<ProductDetail />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/get-quote" element={<GetQuote />} />
+        <Route path="/contact" element={<ContactUs />} />
+
+        <Route
+          path="/admin"
+          element={authed ? <AdminDashboard onLogout={handleLogout} /> : <AdminLogin onLogin={handleLogin} />}
+        />
+
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      <FloatingContact />
+    </>
   );
 }
 
