@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
       {/* Background subtle radial texture */}
       <div className="absolute bottom-0 left-[5%] w-[450px] h-[450px] rounded-full bg-blue-500/[0.005] blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-8 w-full">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 w-full">
         <div className="max-w-[1320px] mx-auto w-full">
 
           {/* Top Segment: Headline, Stats and Factory Image */}

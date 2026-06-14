@@ -142,7 +142,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className={`lg:hidden fixed inset-x-0 top-[72px] px-6 py-8 flex flex-col gap-6 animate-fade-in shadow-xl ${
+        <div className={`lg:hidden fixed inset-x-0 top-[72px] px-6 py-8 flex flex-col gap-6 animate-fade-in shadow-xl max-h-[calc(100vh-80px)] overflow-y-auto ${
           isLightNavbar 
             ? 'bg-white/95 backdrop-blur-3xl border-b border-slate-200/50' 
             : 'bg-slate-950/95 backdrop-blur-3xl border-b border-white/5'

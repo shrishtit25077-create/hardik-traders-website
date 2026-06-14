@@ -49,7 +49,7 @@ export default function Contact() {
       {/* Subtle radial glow background */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-8 relative z-10 w-full">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 relative z-10 w-full">
         <div className="max-w-[1320px] mx-auto w-full">
 
           {/* Header */}

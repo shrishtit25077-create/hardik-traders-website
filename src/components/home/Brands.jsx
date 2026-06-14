@@ -428,7 +428,7 @@ export default function Brands() {
       {/* Subtle Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.015)_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none opacity-80" />
 
-      <div className="max-w-[1440px] mx-auto px-8 relative z-10 w-full">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 relative z-10 w-full">
         <div className="max-w-[1320px] mx-auto w-full">
 
           {/* Heading */}
@@ -498,7 +498,7 @@ export default function Brands() {
                   key={brand.name}
                   whileHover={{ y: -10 }}
                   className="
-                    w-[220px] h-[120px] bg-white border border-[#ececec] rounded-[24px] 
+                    w-full max-w-[220px] h-[120px] bg-white border border-[#ececec] rounded-[24px] 
                     flex items-center justify-center select-none cursor-default relative overflow-hidden group
                     hover:shadow-[0_12px_24px_rgba(59,130,246,0.15)] hover:border-blue-400/40 transition-all duration-300
                   "

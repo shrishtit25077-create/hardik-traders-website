@@ -9,13 +9,13 @@ const ProductCategories = () => {
     <div className="bg-bg-900 min-h-screen text-text-primary flex flex-col justify-between">
       <Navbar />
 
-      <main className="max-w-[1400px] w-full mx-auto px-6 md:px-10 py-16 flex-grow mt-[72px]">
+      <main className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 md:px-10 py-16 flex-grow mt-[72px]">
         {/* Hero Section */}
         <section className="mb-16 border-l-4 border-ice-blue pl-6 md:pl-8">
           <span className="inline-flex items-center gap-2 px-3 py-1 bg-ice-blue/10 text-ice-blue border border-ice-blue/20 text-[10px] font-bold uppercase tracking-[0.2em] mb-4 rounded-full">
             Product Hub
           </span>
-          <h1 className="text-[40px] sm:text-[52px] font-black text-text-primary tracking-tight leading-none uppercase mb-4">
+          <h1 className="text-[32px] sm:text-[44px] md:text-[52px] font-black text-text-primary tracking-tight leading-none uppercase mb-4">
             Product <span className="text-ice-blue">Categories</span>
           </h1>
           <p className="text-text-secondary text-[16px] max-w-2xl font-medium leading-relaxed">
@@ -49,7 +49,7 @@ const ProductCategories = () => {
           })}
 
           {/* Call to Action Card */}
-          <div className="lg:col-span-2 bg-bg-800 border border-border-subtle hover:border-ice-blue/30 p-8 flex flex-col md:flex-row items-center justify-between gap-8 rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.04)] relative overflow-hidden group transition-all duration-300">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2 bg-bg-800 border border-border-subtle hover:border-ice-blue/30 p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-8 rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.04)] relative overflow-hidden group transition-all duration-300">
             <div className="absolute inset-0 bg-gradient-to-r from-ice-blue/5 to-transparent pointer-events-none" />
             <div className="relative z-10">
               <h2 className="text-[20px] md:text-[24px] font-black text-text-primary uppercase tracking-tight mb-2">Custom Engineering Solutions</h2>

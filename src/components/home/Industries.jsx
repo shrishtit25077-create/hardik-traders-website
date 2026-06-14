@@ -11,7 +11,7 @@ const industries = [
     tagline: '25+ years support',
     desc: 'Delivering factory machinery parts, production line controls, and comprehensive engineering solutions under one roof.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB7XjCZJdHpjRsI41t2hNilVh_YJT-3S0PCMpSEPeHzhaxLTexMFdRjFhJOEThCGLN7NapQsoYldFO-u0kBgB_Hu-UWqUQ2SowEKbsUDPOct87AYdJuwtEgBR4oZNBCewkj2LkTLCsY_zojHB6T2ifmEnRllRd5acZuqlIKnWjQrsn7GcNv3K3EKFs5t88RGhI6U5IVSORiGJdKzvhbPotD1l4WqnH9GzWb03wCPVeyrFT5VZ2L5oDMkmfPIzGB-yptQlhmP1JQvzLk',
-    sizeClass: 'lg:col-span-2 lg:row-span-2 h-[352px] lg:h-[352px] min-h-[300px]',
+    sizeClass: 'col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 h-[280px] sm:h-[320px] lg:h-auto min-h-[280px] lg:min-h-[352px]',
     isHero: true,
   },
   {
@@ -20,7 +20,7 @@ const industries = [
     tagline: 'OEM solutions',
     desc: 'Supply chain support for high-precision vehicle drivetrain parts and automated robotic assembly lines.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA4cNEwRBEmVr7_nByxl5SdRk_wpss1FKW8pYVb31-8zUHSrdYFj1qRbiqYewFha9J3NDDulb6Gk0m3qVfurkhZxhlI3G68zrwsm0hE8bTi2_wpw3D8zj7kRo8QIzyoANc7CUOYyZQcoryoLEyjk0vgBTrZ9q7eC4KGVpeLijOtFv9vyeJRYhwPI3Kb0FVxIsFmUk1KaVMD56AeU6waCG_t0o7Afn1mh1JUvpgswWidsFujx3dBdqZiYzPKddlGGw3EaZikijafxWA-',
-    sizeClass: 'lg:col-span-1 lg:row-span-1 h-[160px]',
+    sizeClass: 'col-span-1 lg:col-span-1 lg:row-span-1 h-[160px]',
   },
   {
     id: 'packaging',
@@ -28,7 +28,7 @@ const industries = [
     tagline: 'Motion control systems',
     desc: 'Intelligent high-speed conveyor belts, carton dividers, and responsive packaging machinery sensors.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCI0iPNp9DJ3F5nRL_7Gjlc_coV52p4sWU1gCl4nU3SVX8TrcBZB5WIQwh89pvCRsJalSf4Dhodl5tE6NjRySTA8tvJmIon_PD3TGDiUfVMkYi5q-0hZ5wYFMAPmlF_gpiS7v40XnQFN-FSkX1dTuq8s4QxjTOySW-3AzS2wUxZIjg4vl-woY0KuvQzaStwkBEJ2ZR1-_GeLVwimEc_Vbu6nSSe2apJ3Pm-v2Vsi-3WQ4I89pZfGYvCVxYOU9txi22d6J5kDtpuZXYX',
-    sizeClass: 'lg:col-span-1 lg:row-span-1 h-[160px]',
+    sizeClass: 'col-span-1 lg:col-span-1 lg:row-span-1 h-[160px]',
   },
   {
     id: 'textile',
@@ -36,7 +36,7 @@ const industries = [
     tagline: 'High-speed spindle solutions',
     desc: 'High-rpm specialized spindle setups, automated loom bearings, and custom weave sensors.',
     image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80',
-    sizeClass: 'lg:col-span-1 lg:row-span-1 h-[160px]',
+    sizeClass: 'col-span-1 lg:col-span-1 lg:row-span-1 h-[160px]',
   },
   {
     id: 'construction',
@@ -44,7 +44,7 @@ const industries = [
     tagline: 'Heavy-duty bearings',
     desc: 'Extreme-durability heavy bearings for loaders, structural cranes, and material handling systems.',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80',
-    sizeClass: 'lg:col-span-1 lg:row-span-1 h-[160px]',
+    sizeClass: 'col-span-1 lg:col-span-1 lg:row-span-1 h-[160px]',
   },
   {
     id: 'agriculture',
@@ -52,7 +52,7 @@ const industries = [
     tagline: 'Field equipment support',
     desc: 'Resilient drive-joints and dust-sealed bearings for tractors, combine harvesters, and sprayers.',
     image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80',
-    sizeClass: 'lg:col-span-1 lg:row-span-1 h-[160px]',
+    sizeClass: 'col-span-1 lg:col-span-1 lg:row-span-1 h-[160px]',
   },
   {
     id: 'food-processing',
@@ -60,7 +60,7 @@ const industries = [
     tagline: 'Hygienic components',
     desc: 'FDA-approved food-safe lubricants, stainless pumps, and washdown-rated pneumatic actuators.',
     image: 'https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=600&q=80',
-    sizeClass: 'lg:col-span-1 lg:row-span-1 h-[160px]',
+    sizeClass: 'col-span-1 lg:col-span-1 lg:row-span-1 h-[160px]',
   },
   {
     id: 'pharma',
@@ -68,7 +68,7 @@ const industries = [
     tagline: 'Precision engineering',
     desc: 'Cleanroom-certified pneumatic drives, laboratory scale measurement, and precision dosing valves.',
     image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80',
-    sizeClass: 'lg:col-span-2 lg:row-span-1 h-[160px]',
+    sizeClass: 'col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-1 h-[160px]',
   },
 ];
 
@@ -203,7 +203,7 @@ export default function Industries() {
       <div className="absolute bottom-1/4 right-[30%] w-[1px] h-3/4 bg-gradient-to-b from-blue-500/0 via-blue-500/8 to-blue-500/0 pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/[0.015] blur-[150px] pointer-events-none" />
 
-      <div className="max-w-[1440px] mx-auto px-8 relative z-10 w-full">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 relative z-10 w-full">
         <div className="max-w-[1320px] mx-auto w-full">
           {/* Centered Header */}
           <motion.div
@@ -223,7 +223,7 @@ export default function Industries() {
           </motion.div>
 
           {/* Premium Asymmetrical Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
             {industries.map((ind, i) => (
               <BentoCard key={ind.id} ind={ind} inView={inView} index={i} />
             ))}

@@ -17,7 +17,7 @@ export default function TechSupport() {
 
   return (
     <section id="tech-support" className="bg-gradient-to-b from-[#f7f8fb] to-[#f6f8fb] pt-[40px] md:pt-[40px] lg:pt-[40px] pb-[40px] md:pb-[40px] lg:pb-[40px] border-t border-black/[0.04]">
-      <div className="max-w-[1440px] mx-auto px-8 w-full">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 w-full">
         <div className="max-w-[1320px] mx-auto w-full">
           <div ref={ref} className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-[rgba(20,50,100,0.06)] rounded-[28px] overflow-hidden bg-[#F4F8FD] shadow-[0_12px_40px_rgba(0,0,0,0.02)]">
 

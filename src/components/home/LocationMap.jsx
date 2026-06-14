@@ -7,7 +7,7 @@ export default function LocationMap() {
 
   return (
     <section className="bg-gradient-to-b from-[#f8fafc] to-[#f5f7fb] pt-[40px] md:pt-[40px] lg:pt-[40px] pb-[60px] md:pb-[80px] lg:pb-[100px] border-t border-black/[0.04]">
-      <div className="max-w-[1440px] mx-auto px-8 w-full">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 w-full">
         <div className="max-w-[1320px] mx-auto w-full">
           <motion.div
             ref={ref}

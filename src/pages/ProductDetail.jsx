@@ -32,7 +32,7 @@ const ProductDetail = () => {
     <div className="bg-bg-900 min-h-screen text-text-primary flex flex-col justify-between">
       <Navbar />
 
-      <main className="max-w-[1400px] w-full mx-auto px-6 md:px-10 py-12 flex-grow mt-[72px]">
+      <main className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 md:px-10 py-12 flex-grow mt-[72px]">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-text-secondary mb-8 text-[12px] font-bold uppercase tracking-wider overflow-x-auto whitespace-nowrap pb-2">
           <Link className="hover:text-ice-blue transition-colors" to="/products">Products</Link>
@@ -54,7 +54,7 @@ const ProductDetail = () => {
                   src={product.image || "https://lh3.googleusercontent.com/aida-public/AB6AXuCsfU-V-1W5TjG3_qHnZzP_Yj2A7wB_KkG_3M8M_Q_Q_Q_Q_Q_Q_Q_Q_Q_Q_Q_Q"}
                 />
               </div>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                 <div className="border-2 border-ice-blue rounded-[12px] overflow-hidden cursor-pointer h-24 bg-white p-2 flex items-center justify-center">
                   <img alt="View 1" className="w-full h-full object-contain" src={product.image} />
                 </div>
@@ -69,7 +69,7 @@ const ProductDetail = () => {
             {/* Product Info */}
             <div className="space-y-6">
               <div>
-                <h1 className="text-[32px] sm:text-[40px] font-black uppercase tracking-tight text-text-primary mb-4 leading-tight">{product.name}</h1>
+                <h1 className="text-[26px] sm:text-[32px] md:text-[40px] font-black uppercase tracking-tight text-text-primary mb-4 leading-tight">{product.name}</h1>
                 <div className="flex flex-wrap gap-3 mb-6">
                   <span className="text-[11px] font-bold bg-slate-50 border border-border-mid px-3 py-1 text-text-secondary tracking-wider rounded-full">SKU: {product.sku}</span>
                   <span className="text-[11px] font-bold bg-ice-blue/10 border border-ice-blue/20 px-3 py-1 text-ice-blue tracking-wider uppercase rounded-full">Brand: {product.brand || 'Genuine'}</span>
@@ -85,8 +85,8 @@ const ProductDetail = () => {
                   <span className="w-2 h-2 rounded-full bg-ice-blue" />
                   Technical Specifications
                 </h2>
-                <div className="bg-white border border-border-subtle overflow-hidden rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.04)] max-w-3xl">
-                  <table className="w-full text-left text-[14px]">
+                <div className="bg-white border border-border-subtle overflow-hidden rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.04)] max-w-3xl overflow-x-auto">
+                  <table className="w-full text-left text-[14px] min-w-[400px]">
                     <thead className="bg-slate-50/50 border-b border-border-subtle text-text-muted font-bold uppercase tracking-widest text-[11px]">
                       <tr>
                         <th className="px-6 py-4">Attribute</th>
@@ -225,7 +225,7 @@ const ProductDetail = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { id: '1', name: 'Cylindrical Roller Bearing', type: 'Roller Bearings', desc: 'High load capacity for demanding industrial gearboxes and machinery.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDnt9G4-8i_8n_Dvc3cS2lEyAypGsJ0hekjxNaBFsBZl8zNVnIsuX1L3oxyMDu5vUumo383W0edP2glP_Hwn_Q3pPNLd2wDQAGC05MuExabJCRa5c7Bc0t7Nk9H5kq40eecvnFRb8bZXTPPcUprXizSesIXJhTegrvMFi8se1YJkWlVHZ-TO4Hm1P0b185J0A8e8_c1SC20uvEGxVrchGAxOBq1LA2Vunc5RA6E7XXR4QfWDYL_HlYgyViN9Rkfv6oeaziBvbnAxtKE' },
               { id: '2', name: 'H-Type Linear Rails', type: 'Linear Guides', desc: 'Precision motion control for automation and assembly lines.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCCVjmZnaLkUvjKOYdL0jZeXZRySpudeioPcOZGgynLtmvrRCHohCRCDolHkdxzNsGfKI40vr6CwIn17-f_rhNZZWUmKvTKzvxJHshOds3J014rlC2Ho17rJWGTDTPhzKL42jTsTbnKOgbEmk-yJqI9v95Hw6j3NmDz_oI_3VJ5uqiyawSxRNLVasXGjnNqQZ7PqOrt4r5vgTyf-y8vcyAz4wbqaA248lIqPFJq8FK0zx6vf0ew3rvnK-woSaxewW5RwyrBd0AbcXN1' },
