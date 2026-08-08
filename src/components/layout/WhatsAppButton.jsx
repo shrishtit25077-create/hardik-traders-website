@@ -27,7 +27,7 @@ export default function WhatsAppButton() {
         e.currentTarget.style.borderColor = 'var(--red)';
         e.currentTarget.style.backgroundColor = 'var(--red-tint)';
         e.currentTarget.style.color = 'var(--red)';
-        e.currentTarget.style.boxShadow = '0 4px 16px rgba(215,38,61,0.15)';
+        e.currentTarget.style.boxShadow = '0 4px 16px rgba(59,130,246,0.15)';
       }}
       onMouseLeave={e => {
         e.currentTarget.style.borderColor = '#CFE9D8';

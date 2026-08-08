@@ -6,19 +6,18 @@ import { useInView } from 'react-intersection-observer';
 const categories = [
   'All',
   'Bearings',
-  'Automation',
+  'Sensors',
   'Pneumatics',
-  'Hydraulics',
   'Electrical',
-  'Measuring',
-  'Lubricants',
-  'Fasteners'
+  'Allen Bolts',
+  'Pulleys',
+  'Safety'
 ];
 
 const brandPartners = [
   {
     name: 'Bosch',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 150 45" className="w-32 h-10">
         <circle cx="22" cy="22" r="10" stroke="#ff0000" strokeWidth="2.5" fill="none" />
@@ -30,7 +29,7 @@ const brandPartners = [
   },
   {
     name: 'DeWalt',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 150 45" className="w-32 h-10">
         <rect x="0" y="5" width="150" height="35" fill="#FFC800" rx="4" />
@@ -40,7 +39,7 @@ const brandPartners = [
   },
   {
     name: 'Makita',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="50%" y="32" textAnchor="middle" fill="#CE1126" className="font-black italic text-[30px] tracking-tighter" style={{ fontFamily: 'Georgia, serif' }}>makita</text>
@@ -49,7 +48,7 @@ const brandPartners = [
   },
   {
     name: 'Stanley',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <rect x="0" y="8" width="120" height="29" fill="#FFC20E" rx="3" />
@@ -60,7 +59,7 @@ const brandPartners = [
   },
   {
     name: 'Hilti',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <rect x="5" y="10" width="110" height="25" fill="#E21B23" rx="2" />
@@ -70,7 +69,7 @@ const brandPartners = [
   },
   {
     name: 'Taparia',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="50%" y="30" textAnchor="middle" fill="#0A7A4C" className="font-extrabold text-[22px] tracking-widest" style={{ fontFamily: 'sans-serif' }}>TAPARIA</text>
@@ -80,7 +79,7 @@ const brandPartners = [
   },
   {
     name: 'Toptul',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="50%" y="28" textAnchor="middle" fill="#E31B23" className="font-black italic text-[24px]" style={{ fontFamily: 'sans-serif' }}>TOPTUL</text>
@@ -90,7 +89,7 @@ const brandPartners = [
   },
   {
     name: 'Yato',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="25" y="32" fill="#000000" className="font-extrabold text-[32px] tracking-tight">YA</text>
@@ -100,7 +99,7 @@ const brandPartners = [
   },
   {
     name: 'Total Tools',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="50%" y="26" textAnchor="middle" fill="#005A9C" className="font-black text-[22px] tracking-tighter">TOTAL</text>
@@ -163,7 +162,7 @@ const brandPartners = [
   },
   {
     name: 'Mitsubishi Electric',
-    categories: ['Automation', 'Electrical'],
+    categories: ['Electrical'],
     logo: (
       <svg viewBox="0 0 150 45" className="w-36 h-10">
         <path d="M15 28 l7-12 l7 12 z M7 16 l7-12 l7 12 z M23 16 l7-12 l7 12 z" fill="#E31B23" />
@@ -174,7 +173,7 @@ const brandPartners = [
   },
   {
     name: 'Yaskawa',
-    categories: ['Automation'],
+    categories: ['Electrical'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="50%" y="30" textAnchor="middle" fill="#00529B" className="font-black text-[24px] tracking-widest">YASKAWA</text>
@@ -183,7 +182,7 @@ const brandPartners = [
   },
   {
     name: 'Balluff',
-    categories: ['Automation'],
+    categories: ['Electrical'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <path d="M12 20 c0-4 4-8 8-8 s8 4 8 8 s-4 8-8 8 s-8-4-8-8 z M16 20 c0-2 2-4 4-4 s4 2 4 4 s-2 4-4 4 s-4-2-4-4 z" fill="#005A9C" />
@@ -193,7 +192,7 @@ const brandPartners = [
   },
   {
     name: 'Pepperl+Fuchs',
-    categories: ['Automation'],
+    categories: ['Electrical'],
     logo: (
       <svg viewBox="0 0 150 45" className="w-36 h-10">
         <rect x="5" y="10" width="25" height="25" fill="#4B9C2A" rx="2" />
@@ -224,7 +223,7 @@ const brandPartners = [
   },
   {
     name: 'Parker',
-    categories: ['Pneumatics', 'Hydraulics'],
+    categories: ['Pneumatics'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <circle cx="20" cy="22" r="12" fill="#FFC20E" />
@@ -245,7 +244,7 @@ const brandPartners = [
   },
   {
     name: 'Danfoss',
-    categories: ['Hydraulics'],
+    categories: ['Pneumatics'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="50%" y="31" textAnchor="middle" fill="#E31B23" className="font-extrabold italic text-[28px]" style={{ fontFamily: 'Georgia, serif' }}>Danfoss</text>
@@ -254,7 +253,7 @@ const brandPartners = [
   },
   {
     name: 'Bosch Rexroth',
-    categories: ['Hydraulics'],
+    categories: ['Bearings'],
     logo: (
       <svg viewBox="0 0 150 45" className="w-32 h-11">
         <circle cx="20" cy="22" r="12" stroke="#E31B23" strokeWidth="2.5" fill="none" />
@@ -278,7 +277,7 @@ const brandPartners = [
   },
   {
     name: 'Siemens',
-    categories: ['Automation', 'Electrical'],
+    categories: ['Electrical'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="50%" y="32" textAnchor="middle" fill="#00828A" className="font-bold text-[28px] tracking-widest">SIEMENS</text>
@@ -287,7 +286,7 @@ const brandPartners = [
   },
   {
     name: 'Fuji Electric',
-    categories: ['Automation', 'Electrical'],
+    categories: ['Electrical'],
     logo: (
       <svg viewBox="0 0 150 45" className="w-36 h-10">
         <circle cx="20" cy="22" r="12" fill="#E31B23" />
@@ -382,7 +381,7 @@ const brandPartners = [
   },
   {
     name: 'Unbrako',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="10" y="30" fill="#000000" className="font-black text-[22px]">Unbrako</text>
@@ -392,8 +391,19 @@ const brandPartners = [
     )
   },
   {
+    name: 'X-Bolt',
+    categories: ['Allen Bolts'],
+    logo: (
+      <svg viewBox="0 0 120 45" className="w-28 h-10">
+        <text x="10" y="30" fill="#000000" className="font-black text-[22px]">X-Bolt</text>
+        <circle cx="105" cy="22" r="8" fill="none" stroke="#E31B23" strokeWidth="2.5" />
+        <path d="M101 18 l8 8 M109 18 l-8 8" stroke="#E31B23" strokeWidth="2" />
+      </svg>
+    )
+  },
+  {
     name: 'Pidilite',
-    categories: ['Fasteners'],
+    categories: ['Allen Bolts'],
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="50%" y="28" textAnchor="middle" fill="#005A9C" className="font-black text-[20px] tracking-tighter">Pidilite</text>
@@ -407,6 +417,79 @@ const brandPartners = [
     logo: (
       <svg viewBox="0 0 120 45" className="w-28 h-10">
         <text x="50%" y="31" textAnchor="middle" fill="#E31B23" className="font-black text-[24px] tracking-[0.05em]">TSUBAKI</text>
+      </svg>
+    )
+  },
+  {
+    name: 'Fenner',
+    categories: ['Pulleys'],
+    logo: (
+      <svg viewBox="0 0 120 45" className="w-28 h-10">
+        <text x="50%" y="30" textAnchor="middle" fill="#005A9C" className="font-black text-[22px] tracking-widest">FENNER</text>
+        <rect x="20" y="34" width="80" height="2" fill="#005A9C" />
+      </svg>
+    )
+  },
+  {
+    name: '3M',
+    categories: ['Safety'],
+    logo: (
+      <svg viewBox="0 0 120 45" className="w-28 h-10">
+        <text x="50%" y="32" textAnchor="middle" fill="#E31B23" className="font-black text-[32px]">3M</text>
+      </svg>
+    )
+  },
+  {
+    name: 'Honeywell',
+    categories: ['Safety'],
+    logo: (
+      <svg viewBox="0 0 120 45" className="w-28 h-10">
+        <text x="50%" y="30" textAnchor="middle" fill="#E21B23" className="font-black text-[20px] tracking-tight">Honeywell</text>
+      </svg>
+    )
+  },
+  {
+    name: 'Udyogi',
+    categories: ['Safety'],
+    logo: (
+      <svg viewBox="0 0 120 45" className="w-28 h-10">
+        <text x="50%" y="30" textAnchor="middle" fill="#005A9C" className="font-extrabold text-[22px]">UDYOGI</text>
+      </svg>
+    )
+  },
+  {
+    name: 'Omron',
+    categories: ['Sensors'],
+    logo: (
+      <svg viewBox="0 0 120 45" className="w-28 h-10">
+        <text x="50%" y="31" textAnchor="middle" fill="#005A9C" className="font-black text-[26px] tracking-wide">OMRON</text>
+      </svg>
+    )
+  },
+  {
+    name: 'Banner',
+    categories: ['Sensors'],
+    logo: (
+      <svg viewBox="0 0 120 45" className="w-28 h-10">
+        <text x="50%" y="30" textAnchor="middle" fill="#E21B23" className="font-extrabold text-[22px] tracking-wide">BANNER</text>
+      </svg>
+    )
+  },
+  {
+    name: 'IFM',
+    categories: ['Sensors'],
+    logo: (
+      <svg viewBox="0 0 120 45" className="w-28 h-10">
+        <text x="50%" y="30" textAnchor="middle" fill="#FF8C00" className="font-black text-[28px]">ifm</text>
+      </svg>
+    )
+  },
+  {
+    name: 'P+F',
+    categories: ['Sensors'],
+    logo: (
+      <svg viewBox="0 0 120 45" className="w-28 h-10">
+        <text x="50%" y="30" textAnchor="middle" fill="#007A3E" className="font-black text-[24px]">P+F</text>
       </svg>
     )
   }
@@ -461,7 +544,7 @@ export default function Brands() {
                 placeholder="Search brands..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 h-12 bg-white border border-[#ececec] text-[#081120] text-[14px] outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-[16px] transition-all placeholder-slate-400 font-semibold"
+                className="w-full pl-10 pr-4 h-12 bg-white border border-[#ececec] text-[#081120] text-[14px] outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-[16px] transition-all placeholder-slate-400 font-semibold"
               />
             </div>
 
@@ -482,7 +565,7 @@ export default function Brands() {
             </div>
           </div>
 
-          {/* 5-Column Grid with tighter 24px gap and reduced margin bottom */}
+          {/* 5-Column Grid */}
           <motion.div
             layout
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center max-w-[1320px] mx-auto mb-10"
@@ -500,7 +583,7 @@ export default function Brands() {
                   className="
                     w-full max-w-[220px] h-[120px] bg-white border border-[#ececec] rounded-[24px] 
                     flex items-center justify-center select-none cursor-default relative overflow-hidden group
-                    hover:shadow-[0_12px_24px_rgba(59,130,246,0.15)] hover:border-blue-400/40 transition-all duration-300
+                    hover:shadow-[0_12px_24px_rgba(59,130,246,0.15)] hover:border-blue-500/35 transition-all duration-300
                   "
                 >
                   {/* Real Logos */}

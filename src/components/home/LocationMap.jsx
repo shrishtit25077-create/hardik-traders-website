@@ -25,7 +25,7 @@ export default function LocationMap() {
                 </span>
                 <span className="hidden md:inline text-slate-300">|</span>
                 <span className="text-[12px] md:text-[13px] font-bold text-slate-500 uppercase tracking-wider">
-                  SH.NO.1740/4, Near SBI Bank, Circular Road, Rewari – 123401
+                  Shop No. 1740/4, Near SBI Bank, Circular Road, Rewari - 123401
                 </span>
               </div>
 

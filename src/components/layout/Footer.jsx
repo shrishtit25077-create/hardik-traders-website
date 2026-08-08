@@ -4,24 +4,26 @@ import { ArrowRight, Phone, Mail, MapPin } from 'lucide-react';
 
 const productsList = [
   { label: 'Bearings', to: '/products/category/bearings' },
-  { label: 'Hydraulics', to: '/products/category/hydraulics' },
+  { label: 'Sensors', to: '/products/category/sensors' },
   { label: 'Pneumatics', to: '/products/category/pneumatics' },
-  { label: 'Automation & Sensors', to: '/products/category/sensors-automation' },
-  { label: 'Industrial Tools', to: '/products' },
+  { label: 'Electricals & Electronics', to: '/products/category/electricals-electronics' },
+  { label: 'Allen Bolts', to: '/products/category/allen-bolts' },
+  { label: 'Pulleys & V-Belts', to: '/products/category/pulleys-vbelts' },
+  { label: 'Safety Equipment', to: '/products/category/safety-equipment' },
 ];
 
 const brandsList = [
-  { label: 'SKF', to: '/products' },
-  { label: 'FAG', to: '/products' },
-  { label: 'NSK', to: '/products' },
-  { label: 'Festo', to: '/products' },
-  { label: 'Bosch Rexroth', to: '/products' },
+  { label: 'SKF', to: '/products/category/bearings' },
+  { label: 'Festo', to: '/products/category/pneumatics' },
+  { label: 'Schneider', to: '/products/category/electricals-electronics' },
+  { label: 'Unbrako', to: '/products/category/allen-bolts' },
+  { label: 'Fenner', to: '/products/category/pulleys-vbelts' },
 ];
 
 export default function Footer() {
   return (
     <footer id="footer" className="bg-[#05070A] text-white border-t border-white/[0.03] relative overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-700/5 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Main Grid (Reduced py-16 to py-12) */}
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 py-12">
@@ -30,7 +32,7 @@ export default function Footer() {
           {/* Column 1: Company Info */}
           <div className="flex flex-col items-start lg:pr-4">
             <Link to="/" className="inline-flex items-center gap-3 mb-5 group">
-              <div className="w-9 h-9 bg-blue-400 flex items-center justify-center font-black text-[#05070A] text-sm tracking-tighter group-hover:shadow-[0_0_16px_rgba(96,165,250,0.5)] transition-all duration-300 rounded-[10px]">
+              <div className="w-9 h-9 bg-blue-600 flex items-center justify-center font-black text-white text-sm tracking-tighter group-hover:shadow-[0_0_16px_rgba(59,130,246,0.5)] transition-all duration-300 rounded-[10px]">
                 HT
               </div>
               <div className="flex flex-col leading-none">
@@ -39,7 +41,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-slate-400 text-xs leading-relaxed mb-5">
-              Industrial Components Since 2001. Pan India distributor of high-performance bearings, pneumatics, and automation systems.
+              Industrial Components Since 2001. Pan India distributor of high-performance bearings, pneumatics, and electrical systems.
             </p>
             {/* Certification tags directly below paragraph */}
             <div className="flex flex-wrap gap-1.5">
@@ -90,15 +92,15 @@ export default function Footer() {
             <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-5 pb-1 border-b border-white/[0.04] inline-block">Contact</h4>
             <ul className="space-y-3.5 mb-5">
               <li className="flex items-start gap-2.5 text-slate-400 text-xs">
-                <MapPin size={14} className="text-blue-400 flex-shrink-0 mt-0.5" />
-                <span className="leading-relaxed font-medium">SH.NO.1740/4, Near SBI Bank, Circular Road, Rewari, Haryana – 123401</span>
+                <MapPin size={14} className="text-blue-500 flex-shrink-0 mt-0.5" />
+                <span className="leading-relaxed font-medium">Shop No. 1740/4, Near SBI Bank, Circular Road, Rewari, Haryana - 123401</span>
               </li>
               <li className="flex items-center gap-2.5 text-slate-400 text-xs">
-                <Phone size={14} className="text-blue-400 flex-shrink-0" />
+                <Phone size={14} className="text-blue-500 flex-shrink-0" />
                 <a href="tel:+919416215742" className="hover:text-blue-400 transition-colors font-semibold">+91 94162 15742</a>
               </li>
               <li className="flex items-center gap-2.5 text-slate-400 text-xs">
-                <Mail size={14} className="text-blue-400 flex-shrink-0" />
+                <Mail size={14} className="text-blue-500 flex-shrink-0" />
                 <a href="mailto:hardiktraders123@gmail.com" className="hover:text-blue-400 transition-colors font-semibold break-all">hardiktraders123@gmail.com</a>
               </li>
             </ul>

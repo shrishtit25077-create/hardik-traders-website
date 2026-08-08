@@ -72,7 +72,7 @@ export default function TrustSection() {
             >
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-105"
-                style={{ backgroundColor: 'var(--red-light)', border: '1px solid rgba(227, 27, 35, 0.15)' }}
+                style={{ backgroundColor: 'var(--red-light)', border: '1px solid rgba(59, 130, 246, 0.15)' }}
               >
                 <Icon size={22} style={{ color: 'var(--red)' }} strokeWidth={1.8} />
               </div>

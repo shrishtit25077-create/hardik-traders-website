@@ -9,7 +9,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'Address',
-    lines: ['SH.NO.1740/4, Near SBI Bank,', 'Circular Road, Rewari,', 'Haryana – 123401'],
+    lines: ['Shop No. 1740/4, Near SBI Bank,', 'Circular Road, Rewari,', 'Haryana - 123401'],
   },
   {
     icon: Phone,
@@ -75,7 +75,7 @@ const ContactUs = () => {
       <section className="bg-gradient-to-b from-bg-800 to-bg-900 pt-28 pb-16 px-5 md:px-10 lg:px-20 border-b border-border-subtle">
         <div className="max-w-[1120px] mx-auto">
           <motion.div initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.7 }}>
-            <span className="inline-block text-[11px] font-bold text-ice-blue uppercase tracking-[0.2em] bg-ice-blue/10 border border-ice-blue/20 px-3 py-1 mb-5 rounded-full">
+            <span className="inline-block text-[11px] font-bold text-blue-600 uppercase tracking-[0.2em] bg-[#E6F0FA] border border-blue-500/20 px-3 py-1 mb-5 rounded-full">
               Get In Touch
             </span>
             <h1 className="text-[44px] sm:text-[56px] font-black text-text-primary tracking-tight leading-tight mb-4 uppercase">
@@ -101,15 +101,15 @@ const ContactUs = () => {
               const Icon = item.icon;
               return (
                 <div key={i} className="flex items-start gap-5">
-                  <div className="w-11 h-11 bg-ice-blue/10 border border-ice-blue/20 text-ice-blue flex items-center justify-center rounded-full flex-shrink-0 mt-0.5">
+                  <div className="w-11 h-11 bg-blue-500/10 border border-blue-500/20 text-blue-600 flex items-center justify-center rounded-full flex-shrink-0 mt-0.5">
                     <Icon size={18} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className="text-[11px] font-bold text-ice-blue uppercase tracking-[0.15em] mb-1.5">{item.label}</p>
+                    <p className="text-[11px] font-bold text-blue-600 uppercase tracking-[0.15em] mb-1.5">{item.label}</p>
                     {item.href ? (
                       item.lines.map((line, li) => (
                         <a key={li} href={item.href}
-                          className="block text-text-primary text-[15px] font-medium hover:text-ice-blue transition-colors">
+                          className="block text-text-primary text-[15px] font-medium hover:text-blue-600 transition-colors">
                           {line}
                         </a>
                       ))
@@ -125,34 +125,28 @@ const ContactUs = () => {
 
             {/* Map placeholder */}
             <div className="relative h-[260px] overflow-hidden border border-border-subtle rounded-[28px] mt-4 group shadow-[0_20px_60px_rgba(0,0,0,0.04)]">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBohnyVoLPW9NlnkeMcHatk1FiTio967So6wQhO52Xm1CPJKHttE9uhlGsXCesB-dBZ5szRpQK0NwHMbu4hng-x2cJMMlJrXaOzaus6_ewoIF_Ur36O6SA7J52kA07ETLM-HsiSeDO9T-lEypRLJ1AN0n6QsOuxJUBRiTjGv-Xa0u4RcPzXUkftf14CcG2Oi8y8Z75T8_PWJi8QVg5RP3288CGf2_4t88TUcq2Heu25hAWp3IJXU_SgBlzfN35ddfSb0omeF1d6mb8b"
-                alt="GIDC Industrial Map"
-                className="w-full h-full object-cover grayscale contrast-125 opacity-70 group-hover:opacity-90 transition-opacity duration-700"
-              />
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="bg-ice-blue text-white px-6 py-3 flex items-center gap-3 shadow-lg rounded-full">
-                  <MapPin size={20} strokeWidth={2} />
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest opacity-80">CIRCULAR ROAD, REWARI</p>
-                    <p className="text-[15px] font-bold">Haryana – 123401</p>
-                  </div>
-                </div>
-              </div>
+              <iframe
+                title="Hardik Traders Map Location"
+                src="https://www.google.com/maps?q=Circular+Road+Near+SBI+Bank+Rewari+Haryana+123401&output=embed"
+                width="100%" height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+              ></iframe>
             </div>
 
             {/* Quick Actions */}
             <div className="flex flex-wrap gap-3 pt-2">
               <a href="https://wa.me/919416215742" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 text-[13px] font-bold hover:bg-[#20bd5a] transition-all rounded-[24px] shadow-[0_4px_12px_rgba(37,211,102,0.15)]">
+                className="flex items-center gap-2 bg-slate-800 text-white px-5 py-2.5 text-[13px] font-bold hover:bg-slate-900 transition-all rounded-[24px] shadow-[0_4px_12px_rgba(30,41,59,0.15)]">
                 WhatsApp Us
               </a>
               <a href="tel:+919416215742"
-                className="flex items-center gap-2 border border-border-mid text-text-primary bg-white px-5 py-2.5 text-[13px] font-bold hover:bg-slate-50 hover:border-ice-blue/30 transition-all rounded-[24px]">
+                className="flex items-center gap-2 border border-border-mid text-text-primary bg-white px-5 py-2.5 text-[13px] font-bold hover:bg-slate-50 hover:border-blue-500/30 transition-all rounded-[24px]">
                 <Phone size={14} /> 94162 15742
               </a>
               <a href="tel:+918950646800"
-                className="flex items-center gap-2 border border-border-mid text-text-primary bg-white px-5 py-2.5 text-[13px] font-bold hover:bg-slate-50 hover:border-ice-blue/30 transition-all rounded-[24px]">
+                className="flex items-center gap-2 border border-border-mid text-text-primary bg-white px-5 py-2.5 text-[13px] font-bold hover:bg-slate-50 hover:border-blue-500/30 transition-all rounded-[24px]">
                 <Phone size={14} /> 89506 46800
               </a>
             </div>
@@ -165,7 +159,7 @@ const ContactUs = () => {
           >
             {submitted ? (
               <div className="flex flex-col items-center justify-center py-24 text-center border border-border-subtle bg-white rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
-                <CheckCircle size={52} className="text-ice-blue mb-6 animate-pulse" strokeWidth={1} />
+                <CheckCircle size={52} className="text-blue-600 mb-6 animate-pulse" strokeWidth={1} />
                 <h2 className="text-[28px] font-black text-text-primary mb-3">Inquiry Sent!</h2>
                 <p className="text-text-secondary text-[15px] max-w-xs leading-relaxed font-medium">
                   Thank you! Our team will respond within 2 business hours with pricing and availability.
@@ -178,7 +172,7 @@ const ContactUs = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5 bg-white border border-border-subtle p-8 sm:p-10 rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
                 <div className="pb-4 border-b border-border-subtle mb-2">
-                  <p className="text-[11px] text-ice-blue font-bold uppercase tracking-[0.2em]">Contact Form</p>
+                  <p className="text-[11px] text-blue-600 font-bold uppercase tracking-[0.2em]">Contact Form</p>
                   <h2 className="text-[24px] font-black text-text-primary mt-1 uppercase">Send Us Your Inquiry</h2>
                 </div>
 
@@ -194,7 +188,7 @@ const ContactUs = () => {
                       <input
                         type={field.type} name={field.name} value={form[field.name]}
                         onChange={handleChange} required placeholder={field.placeholder}
-                        className="h-12 px-4 bg-slate-50/50 border border-border-mid text-text-primary text-[14px] outline-none focus:border-ice-blue focus:ring-1 focus:ring-ice-blue rounded-[12px] transition-colors placeholder-text-dim"
+                        className="h-12 px-4 bg-slate-50/50 border border-border-mid text-text-primary text-[14px] outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 rounded-[12px] transition-colors placeholder-text-dim"
                       />
                     </div>
                   ))}
@@ -203,7 +197,7 @@ const ContactUs = () => {
                 <div className="flex flex-col gap-2">
                   <label className="text-[11px] font-bold text-text-secondary uppercase tracking-wider">Inquiry Subject</label>
                   <select name="subject" value={form.subject} onChange={handleChange}
-                    className="h-12 px-4 bg-slate-50/50 border border-border-mid text-text-primary text-[14px] outline-none focus:border-ice-blue rounded-[12px] transition-colors">
+                    className="h-12 px-4 bg-slate-50/50 border border-border-mid text-text-primary text-[14px] outline-none focus:border-blue-600 rounded-[12px] transition-colors">
                     {subjectOptions.map(o => <option key={o.value} value={o.value} className="bg-bg-800">{o.label}</option>)}
                   </select>
                 </div>
@@ -212,12 +206,12 @@ const ContactUs = () => {
                   <label className="text-[11px] font-bold text-text-secondary uppercase tracking-wider">Your Message *</label>
                   <textarea name="message" value={form.message} onChange={handleChange} required rows={5}
                     placeholder="Describe your industrial requirements in detail..."
-                    className="px-4 py-3 bg-slate-50/50 border border-border-mid text-text-primary text-[14px] outline-none focus:border-ice-blue rounded-[12px] transition-colors resize-none placeholder-text-dim"
+                    className="px-4 py-3 bg-slate-50/50 border border-border-mid text-text-primary text-[14px] outline-none focus:border-blue-600 rounded-[12px] transition-colors resize-none placeholder-text-dim"
                   />
                 </div>
 
                 <button type="submit" disabled={sending}
-                  className="w-full btn-primary h-14 flex items-center justify-center gap-3 bg-ice-blue text-white font-bold text-[13px] uppercase tracking-wider hover:bg-ice-blue-dark transition-all rounded-[24px] shadow-[0_4px_12px_rgba(59,130,246,0.15)]">
+                  className="w-full btn-primary h-14 flex items-center justify-center gap-3 bg-blue-600 text-white font-bold text-[13px] uppercase tracking-wider hover:bg-blue-700 transition-all rounded-[24px] shadow-[0_4px_12px_rgba(59,130,246,0.15)]">
                   {sending ? (
                     <><div className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" /> Sending...</>
                   ) : (

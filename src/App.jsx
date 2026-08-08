@@ -7,11 +7,9 @@ import AdminDashboard from './components/Admin/AdminDashboard';
 
 // Pages
 import Home from './pages/Home';
-import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import ProductCategories from './pages/ProductCategories';
 import DynamicCategory from './pages/DynamicCategory';
-import Catalog from './pages/Catalog';
 import GetQuote from './pages/GetQuote';
 import ContactUs from './pages/ContactUs';
 import FloatingContact from './components/layout/FloatingContact';
@@ -31,7 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<Navigate to="/" replace />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/products" element={<Navigate to="/" replace />} />
         <Route path="/products/categories" element={<ProductCategories />} />
 
         {/* Dynamic Category Route */}
@@ -42,15 +40,15 @@ function App() {
         <Route path="/products/roller-bearings" element={<Navigate to="/products/category/bearings" replace />} />
         <Route path="/products/linear-bearings" element={<Navigate to="/products/category/bearings" replace />} />
         <Route path="/products/pneumatics" element={<Navigate to="/products/category/pneumatics" replace />} />
-        <Route path="/products/automation" element={<Navigate to="/products/category/sensors-automation" replace />} />
+        <Route path="/products/automation" element={<Navigate to="/" replace />} />
         <Route path="/products/measuring-instruments" element={<Navigate to="/products/category/measuring-instruments" replace />} />
-        <Route path="/products/hydraulics" element={<Navigate to="/products/category/hydraulics" replace />} />
+        <Route path="/products/hydraulics" element={<Navigate to="/" replace />} />
         <Route path="/products/electricals" element={<Navigate to="/products/category/electricals-electronics" replace />} />
         <Route path="/products/lubricants" element={<Navigate to="/products/category/lubricants-greases" replace />} />
         <Route path="/products/industrial-seals" element={<Navigate to="/products/category/bearings" replace />} />
 
         <Route path="/product-detail/:sku" element={<ProductDetail />} />
-        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/catalog" element={<Navigate to="/" replace />} />
         <Route path="/get-quote" element={<GetQuote />} />
         <Route path="/contact" element={<ContactUs />} />
 

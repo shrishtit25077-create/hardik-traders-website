@@ -7,7 +7,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'Address',
-    value: 'SH.NO.1740/4, Near SBI Bank,\nCircular Road, Rewari,\nHaryana – 123401',
+    value: 'Shop No. 1740/4, Near SBI Bank,\nCircular Road, Rewari,\nHaryana - 123401',
   },
   {
     icon: Phone,
@@ -87,7 +87,7 @@ export default function Contact() {
                   const Icon = info.icon;
                   return (
                     <div key={i} className="flex items-start gap-5 group">
-                      <div className="w-12 h-12 rounded-full bg-blue-500/8 border border-blue-500/15 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:shadow-[0_0_15px_rgba(37,99,235,0.2)] transition-all duration-300">
+                      <div className="w-12 h-12 rounded-full bg-blue-500/8 border border-blue-500/15 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] transition-all duration-300">
                         <Icon size={18} className="text-blue-600 group-hover:text-white transition-colors" strokeWidth={1.8} />
                       </div>
                       <div>
@@ -110,7 +110,7 @@ export default function Contact() {
                 <a
                   href="https://wa.me/919416215742"
                   target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-emerald-600 text-white text-[11px] font-bold uppercase tracking-widest hover:bg-emerald-500 hover:shadow-[0_0_15px_rgba(16,185,129,0.2)] transition-all rounded-[24px]"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-slate-800 text-white text-[11px] font-bold uppercase tracking-widest hover:bg-slate-900 hover:shadow-[0_0_15px_rgba(30,41,59,0.2)] transition-all rounded-[24px]"
                 >
                   <MessageSquare size={14} /> WhatsApp Support
                 </a>
@@ -138,7 +138,7 @@ export default function Contact() {
             >
               {submitted ? (
                 <div className="h-full flex flex-col items-center justify-center py-16 px-8 text-center rounded-[28px] border border-slate-100 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
-                  <CheckCircle size={48} className="text-blue-500 mb-6" strokeWidth={1.5} />
+                  <CheckCircle size={48} className="text-blue-600 mb-6" strokeWidth={1.5} />
                   <h3 className="text-[#081120] font-black text-2xl uppercase tracking-tight mb-3">Inquiry Received</h3>
                   <p className="text-slate-600 text-sm max-w-sm leading-relaxed">
                     Thank you! Our B2B specialists will analyze your requirements and get back to you with pricing and availability within 2 business hours.
@@ -169,7 +169,7 @@ export default function Contact() {
                     ].map(field => (
                       <div key={field.name} className="flex flex-col gap-1.5">
                         <label className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
-                          {field.label} <span className="text-blue-500">*</span>
+                          {field.label} <span className="text-blue-600">*</span>
                         </label>
                         <input
                           type={field.type}
@@ -178,7 +178,7 @@ export default function Contact() {
                           onChange={handleChange}
                           required
                           placeholder={field.placeholder}
-                          className="h-11 bg-slate-50/50 border border-slate-200 text-slate-900 text-[14px] px-4 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all rounded-[12px] placeholder-slate-400"
+                          className="h-11 bg-slate-50/50 border border-slate-200 text-slate-900 text-[14px] px-4 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-500/10 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all rounded-[12px] placeholder-slate-400"
                         />
                       </div>
                     ))}
@@ -186,7 +186,7 @@ export default function Contact() {
 
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
-                      Requirement <span className="text-blue-500">*</span>
+                      Requirement <span className="text-blue-600">*</span>
                     </label>
                     <textarea
                       name="requirement"
@@ -195,14 +195,14 @@ export default function Contact() {
                       required
                       rows={3}
                       placeholder="Describe your product requirements, requested part numbers, quantities, or specific engineering parameters..."
-                      className="bg-slate-50/50 border border-slate-200 text-slate-900 text-[14px] px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all rounded-[12px] resize-none placeholder-slate-400"
+                      className="bg-slate-50/50 border border-slate-200 text-slate-900 text-[14px] px-4 py-3 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-500/10 focus:shadow-[0_0_15px_rgba(59,130,246,0.1)] transition-all rounded-[12px] resize-none placeholder-slate-400"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={sending}
-                    className="w-full flex items-center justify-center gap-3 bg-blue-600 text-white py-4 font-bold text-[13px] uppercase tracking-[0.15em] hover:bg-blue-500 shadow-[0_4px_20px_rgba(37,99,235,0.15)] transition-all duration-300 disabled:opacity-60 rounded-[24px]"
+                    className="w-full flex items-center justify-center gap-3 bg-blue-600 text-white py-4 font-bold text-[13px] uppercase tracking-[0.15em] hover:bg-blue-700 shadow-[0_4px_20px_rgba(59,130,246,0.15)] transition-all duration-300 disabled:opacity-60 rounded-[24px]"
                   >
                     {sending ? (
                       <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />Sending...</>
