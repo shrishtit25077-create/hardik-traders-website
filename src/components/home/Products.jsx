@@ -41,12 +41,14 @@ const productsData = {
     {
       brand: 'Unbrako',
       image: '/products/unbrako-category.png',
-      types: ['Socket Head Cap Screws', 'Hex Bolts', 'Grub Screws']
-    },
-    {
-      brand: 'X-Bolt',
-      image: 'https://images.unsplash.com/photo-1610988636125-de6bf8436cb4?w=800&auto=format&fit=crop',
-      types: ['Anchor Fasteners', 'High-Tensile Studs', 'Spring Washers']
+      types: [
+        'Socket Head Cap Screws',
+        'Hex Bolts',
+        'Grub Screws',
+        'Anchor Fasteners',
+        'High-Tensile Studs',
+        'Spring Washers'
+      ]
     }
   ],
   'power-tools': [
