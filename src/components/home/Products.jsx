@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import InquiryModal from '../product/InquiryModal';
 
@@ -132,21 +132,15 @@ const productsData = {
 
 function BrandCard({ brandData, onEnquire }) {
   return (
-    <motion.div
-      layout
-      initial={{ opacity: 0, scale: 0.98 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.98 }}
-      transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -8, scale: 1.02 }}
+    <div
       onClick={() => onEnquire({ name: `${brandData.brand} ${brandData.types[0]}` })}
       className="
         relative flex flex-col overflow-hidden group rounded-[28px] border border-slate-100 bg-white/95 backdrop-blur-md h-full cursor-pointer
-        transition-all duration-500 shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:border-blue-500/30 hover:shadow-[0_30px_60px_rgba(59,130,246,0.18)]
+        transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:border-blue-500/30 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(59,130,246,0.18)]
       "
     >
       {/* Brand logo overlay tag (floating badge) */}
-      <div className="absolute top-4 left-4 px-3.5 py-1.5 bg-blue-600/90 text-white text-[10px] font-black uppercase tracking-widest rounded-md backdrop-blur-sm shadow-sm z-10 transition-transform duration-300 group-hover:scale-105">
+      <div className="absolute top-4 left-4 px-3.5 py-1.5 bg-blue-600/90 text-white text-[10px] font-black uppercase tracking-widest rounded-md backdrop-blur-sm shadow-md z-10 transition-transform duration-300 group-hover:scale-105">
         {brandData.brand}
       </div>
 
@@ -184,7 +178,7 @@ function BrandCard({ brandData, onEnquire }) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -192,8 +186,6 @@ export default function Products() {
   const [activeCategory, setActiveCategory] = useState('bearings');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.05 });
-
-  const activeBrands = productsData[activeCategory] || [];
 
   return (
     <section id="products" className="bg-[#F8FAFC] py-8 border-t border-black/[0.04] relative z-20">
@@ -253,18 +245,28 @@ export default function Products() {
           </h3>
         </div>
 
-        {/* Brand Cards Grid - 4 columns on desktop, 3 on tablet, 2 on mobile (grid-cols-2) */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr mt-2">
-          <AnimatePresence mode="popLayout">
-            {activeBrands.map((brand) => (
-              <BrandCard 
-                key={brand.brand} 
-                brandData={brand} 
-                onEnquire={setSelectedProduct} 
-              />
-            ))}
-          </AnimatePresence>
-        </div>
+        {/* Brand Cards Grid - pre-rendered and visibility-toggled for instant switching */}
+        {categories.map((cat) => {
+          const isCurrent = activeCategory === cat.id;
+          return (
+            <div
+              key={cat.id}
+              className={`${
+                isCurrent 
+                  ? "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr mt-2 opacity-100 transition-opacity duration-200 ease-out" 
+                  : "hidden opacity-0"
+              }`}
+            >
+              {(productsData[cat.id] || []).map((brand) => (
+                <BrandCard 
+                  key={brand.brand} 
+                  brandData={brand} 
+                  onEnquire={setSelectedProduct} 
+                />
+              ))}
+            </div>
+          );
+        })}
       </div>
 
       {/* Inquiry Popup Integration */}
