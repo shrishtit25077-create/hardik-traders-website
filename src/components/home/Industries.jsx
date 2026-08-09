@@ -11,13 +11,6 @@ const industries = [
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
   },
   {
-    id: 'automotive',
-    name: 'Automotive',
-    tagline: 'Assembly & robotics',
-    desc: 'Pneumatic clamping systems, precision bearings, and custom robotic tooling for high-speed assembly.',
-    image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&q=80',
-  },
-  {
     id: 'packaging',
     name: 'Packaging',
     tagline: 'High-speed sorting',
@@ -120,8 +113,8 @@ export default function Industries() {
           </p>
         </motion.div>
 
-        {/* Perfectly balanced 3-column grid layout (3x2 structure) with gap-6 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr mt-10">
+        {/* Balanced 5-card grid: 2 cols on sm, 3 cols on lg — last card centered in final row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr mt-10 [&>*:last-child]:sm:col-start-auto [&>*:last-child]:lg:col-start-2">
           {industries.map((ind, i) => (
             <IndustryCard key={ind.id} ind={ind} inView={inView} index={i} />
           ))}

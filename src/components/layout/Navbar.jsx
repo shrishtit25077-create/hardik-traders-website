@@ -83,11 +83,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center border-b transition-all duration-300 ease-out ${
-        scrolled 
-          ? 'h-[64px] border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.2)]' 
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center border-b transition-all duration-300 ease-out ${scrolled
+          ? 'h-[64px] border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.2)]'
           : 'h-[76px] border-white/5'
-      }`}
+        }`}
       style={{
         backgroundColor: scrolled ? 'rgba(10, 20, 40, 0.85)' : 'rgba(10, 20, 40, 0.40)',
         backdropFilter: scrolled ? 'blur(16px)' : 'blur(8px)',
@@ -108,6 +107,9 @@ export default function Navbar() {
             <span className="text-[9px] uppercase tracking-[0.15em] font-semibold text-slate-400 mt-0.5">
               Est. 2001
             </span>
+            <span className="text-[8.5px] text-slate-500 font-normal tracking-wide mt-1">
+              Sister Concern: SS Enterprises
+            </span>
           </div>
         </Link>
 
@@ -118,27 +120,23 @@ export default function Navbar() {
               <button
                 key={link.label}
                 onClick={() => handleHashNav(link.href)}
-                className={`text-[15px] font-bold uppercase tracking-[0.12em] transition-colors duration-300 relative group py-2 ${
-                  isActive(link) ? 'text-blue-400 font-extrabold' : 'text-slate-300 hover:text-white'
-                }`}
+                className={`text-[15px] font-bold uppercase tracking-[0.12em] transition-colors duration-300 relative group py-2 ${isActive(link) ? 'text-blue-400 font-extrabold' : 'text-slate-300 hover:text-white'
+                  }`}
               >
                 {link.label}
-                <span className={`absolute bottom-0 left-0 h-[2px] bg-blue-500 transition-all duration-300 ${
-                  isActive(link) ? 'w-full' : 'w-0 group-hover:w-full'
-                }`} />
+                <span className={`absolute bottom-0 left-0 h-[2px] bg-blue-500 transition-all duration-300 ${isActive(link) ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`} />
               </button>
             ) : (
               <Link
                 key={link.label}
                 to={link.href}
-                className={`text-[15px] font-bold uppercase tracking-[0.12em] transition-colors duration-300 relative group py-2 ${
-                  isActive(link) ? 'text-blue-400 font-extrabold' : 'text-slate-300 hover:text-white'
-                }`}
+                className={`text-[15px] font-bold uppercase tracking-[0.12em] transition-colors duration-300 relative group py-2 ${isActive(link) ? 'text-blue-400 font-extrabold' : 'text-slate-300 hover:text-white'
+                  }`}
               >
                 {link.label}
-                <span className={`absolute bottom-0 left-0 h-[2px] bg-blue-500 transition-all duration-300 ${
-                  isActive(link) ? 'w-full' : 'w-0 group-hover:w-full'
-                }`} />
+                <span className={`absolute bottom-0 left-0 h-[2px] bg-blue-500 transition-all duration-300 ${isActive(link) ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`} />
               </Link>
             )
           )}
@@ -166,7 +164,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div 
+        <div
           className="lg:hidden fixed inset-x-0 top-[70px] px-6 py-8 flex flex-col gap-6 animate-fade-in shadow-xl max-h-[calc(100vh-70px)] overflow-y-auto border-b border-white/5"
           style={{
             backgroundColor: 'rgba(10, 20, 40, 0.95)',
@@ -179,9 +177,8 @@ export default function Navbar() {
               <button
                 key={link.label}
                 onClick={() => handleHashNav(link.href)}
-                className={`text-left font-bold text-[14px] uppercase tracking-widest transition-colors duration-200 ${
-                  isActive(link) ? 'text-blue-400 font-extrabold' : 'text-slate-300 hover:text-white'
-                }`}
+                className={`text-left font-bold text-[14px] uppercase tracking-widest transition-colors duration-200 ${isActive(link) ? 'text-blue-400 font-extrabold' : 'text-slate-300 hover:text-white'
+                  }`}
               >
                 {link.label}
               </button>
@@ -190,18 +187,17 @@ export default function Navbar() {
                 key={link.label}
                 to={link.href}
                 onClick={() => setMobileOpen(false)}
-                className={`font-bold text-[14px] uppercase tracking-widest transition-colors duration-200 ${
-                  isActive(link) ? 'text-blue-400 font-extrabold' : 'text-slate-300 hover:text-white'
-                }`}
+                className={`font-bold text-[14px] uppercase tracking-widest transition-colors duration-200 ${isActive(link) ? 'text-blue-400 font-extrabold' : 'text-slate-300 hover:text-white'
+                  }`}
               >
                 {link.label}
               </Link>
             )
           )}
           <div className="flex flex-col gap-3 pt-4 border-t border-white/5">
-            <Link 
-              to="/get-quote" 
-              onClick={() => setMobileOpen(false)} 
+            <Link
+              to="/get-quote"
+              onClick={() => setMobileOpen(false)}
               className="text-center block py-3 text-[12px] font-bold uppercase tracking-wider bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full hover:brightness-110 transition-all shadow-[0_4px_16px_rgba(59,130,246,0.2)]"
             >
               Get Quote

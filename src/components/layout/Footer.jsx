@@ -38,6 +38,7 @@ export default function Footer() {
               <div className="flex flex-col leading-none">
                 <span className="font-bold text-white text-[15px] tracking-tight group-hover:text-blue-400 transition-colors duration-300">Hardik Traders</span>
                 <span className="text-[9px] text-slate-500 uppercase tracking-[0.12em] font-semibold mt-0.5">Est. 2001</span>
+                <span className="text-[10px] text-slate-500 mt-1.5 font-normal tracking-wide">Sister Concern: SS Enterprises</span>
               </div>
             </Link>
             <p className="text-slate-400 text-xs leading-relaxed mb-5">
